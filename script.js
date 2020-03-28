@@ -1,9 +1,10 @@
-function getAusData() {
+// Function to get the articles related to Corona Virus
+function getAusArticles() {
     $.ajax({
         url: "http://newsapi.org/v2/top-headlines?country=au&category=health&apiKey=0e7b5f109619407cb1b122a24f82e1dc",
         method: "GET",
         success: function (incomingData) {
-            console.log(incomingData.articles);
+            // console.log(incomingData.articles);
             incomingData.articles.forEach((article) => {
                     console.log(article.title)
                     console.log(article.description)                
@@ -16,20 +17,27 @@ function getAusData() {
     })
 }
 
+// Function to get total confirmed and recovered cases in Australia
+
 function getAusConfirmedCases() {
     $.ajax({
         url: "https://corona-api.com/countries/AU",
         method: "GET",
         success: function(incomingData){
-            let confirmedCases = incomingData.data.today.confirmed
+            let confirmedCases = incomingData.data.latest_data.confirmed
+            let recoveredCases = incomingData.data.latest_data.recovered
+
             console.log(confirmedCases);
+            console.log(recoveredCases)
         },
         error: function(uvData) {
             console.log(error);
         }
     })
 }
-function getdata(){
+
+// Function to get total confirmed and recovered cases world wide
+function getWorldConfirmedCases(){
     $.ajax({
         url: "https://cors-anywhere.herokuapp.com/https://bing.com/covid/data/",
         method: "GET",
@@ -42,6 +50,7 @@ function getdata(){
         }  
     })
 }
-getdata();
-getAusData();
+
+getAusArticles();
+getWorldConfirmedCases();
 getAusConfirmedCases();
