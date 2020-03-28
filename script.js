@@ -44,6 +44,9 @@ function getWorldConfirmedCases(){
         success: function(response){
             console.log(response.totalConfirmed);
             console.log(response.totalRecovered);
+
+            totalCases = response.areas[18].areas;
+            totalCases.forEach((casePerSate) => console.log(`${casePerSate.displayName} ${casePerSate.totalConfirmed}`))
         },
         error: function(err){
             console.log("Cannot retrieve data");
@@ -51,6 +54,6 @@ function getWorldConfirmedCases(){
     })
 }
 
-getAusArticles();
+// getAusArticles();
 getWorldConfirmedCases();
-getAusConfirmedCases();
+// getAusConfirmedCases();
