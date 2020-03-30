@@ -1,27 +1,5 @@
 $(document).ready(function() {
-var googleAPIkey = "18c881248ae94a0eb9c6e2320f2ab227";
-var bingURL = "https://cors-anywhere.herokuapp.com/https://bing.com/covid/data/";
-
-
-function displayCaseData(){
-   
-    $.ajax({
-        url: bingURL,
-        method: "GET"})
-        .then(getBingData)
-        .fail(errormsg);
-
-    for ( var i = 0; i < response.areas.length; i++){   
-        //$("#stateName").text(JSON.stringify(response.areas[i].displayName);
-        //$("#totalConfirmed").text(JSON.stringify(response.areas[i].totalConfirmed);
-
-     }
-    
- 
-}
-
-displayCaseData();
-
+const googleAPIkey = "18c881248ae94a0eb9c6e2320f2ab227";
 
 function getTopNewsAU(){
     $.ajax({
@@ -32,7 +10,7 @@ function getTopNewsAU(){
         .fail(errormsg);
 }
 
-getTopNewsAU();
+//getTopNewsAU();
 
 });
 
@@ -41,9 +19,28 @@ function getBingData(response){
     console.log(AuIndex);
     data = response.areas[AuIndex];
     console.log(data);
-    //totalCases = response.areas[AuIndex].areas;
-    //totalCases.forEach((casePerState) => console.log(`${casePerState.displayName} ${casePerState.totalConfirmed}`))
+    for ( var i = 0; i < 8; i++){   
+        $("#stateName").text(JSON.stringify(data.areas[i].displayName));
+        console.log(data.areas[i].displayName())
+        $("#totalConfirmed").text(JSON.stringify(data.areas[i].totalConfirmed));
+        $("#totalDeath").text(JSON.stringify(data.areas[i].totalDeath));
+        let updateTime  = moment(JSON.stringify(data.areas[i].lastUpdated));
+        $("#lastUpdated") = updateTime.tz('Australia/Adelaide').format("dddd, MMMM Do YYYY, h:mm:ss a");
+     }
+    
 }
+
+
+function createBingAPICall(){
+    bingURL = "https://cors-anywhere.herokuapp.com/https://bing.com/covid/data/";
+    $.ajax({
+        url: bingURL,
+        method: "GET"})
+        .then(getBingData)
+        .fail(errormsg);
+}
+
+createBingAPICall();
 
 function populateInfo(response){
     console.log(response)
@@ -52,9 +49,6 @@ function populateInfo(response){
 function errormsg(){
     console.log("Unable to get any data")
 }
-
-
-
 
 // idk yet optional ??
 // function AUTotal() {
