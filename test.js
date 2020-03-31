@@ -19,14 +19,17 @@ function getBingData(response){
     console.log(AuIndex);
     data = response.areas[AuIndex];
     console.log(data);
-    for ( var i = 0; i < 8; i++){   
+    let i = 0;
+    //for ( var i = 0; i < 8; i++){   
         $("#stateName").text(JSON.stringify(data.areas[i].displayName));
-        console.log(data.areas[i].displayName())
+        console.log(data.areas[i].displayName);
         $("#totalConfirmed").text(JSON.stringify(data.areas[i].totalConfirmed));
-        $("#totalDeath").text(JSON.stringify(data.areas[i].totalDeath));
-        let updateTime  = moment(JSON.stringify(data.areas[i].lastUpdated));
-        $("#lastUpdated") = updateTime.tz('Australia/Adelaide').format("dddd, MMMM Do YYYY, h:mm:ss a");
-     }
+        $("#totalDeaths").text(JSON.stringify(data.areas[i].totalDeaths));
+        $("#totalRecovered").text(JSON.stringify(data.areas[i].totalRecovered));
+        let getTime  = JSON.stringify(data.areas[i].lastUpdated);
+        //console.log(getTime);
+        $("#lastUpdated").text(getTime);
+     //}
     
 }
 
