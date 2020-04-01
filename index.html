@@ -4,22 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!--<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="style.css">
     <title>QIG</title>
 </head>
 
-<body>
+<body class="bg-blue-500">
     <!--Header-->
 
     <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
-          <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
           <span class="font-semibold text-xl tracking-tight">QIG - Quarantine and Isolation Guide</span>
         </div>
         <div class="block lg:hidden">
-          <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-          </button>
         </div>
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
           <div class="text-sm lg:flex-grow">
@@ -33,135 +30,77 @@
               Entertainment
             </a>
           </div>
-          <div>
-            <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Search</a>
-          </div>
         </div>
       </nav>
 
 
         <!--Main-->
-        
 
-       <!-- Display number of cases -->
-        <div id ="numberWorldCases"></div>
-        <div id ="numberAustraliaCases"></div>
 
-        
-            <!-- Search card -->
-              <div class="max-w-sm w-full lg:max-w-full lg:flex">
-                  <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">                    
-                  <div class="mb-8">
-                    <div class="text-gray-900 font-bold text-xl mb-2">Search Bar</div>
-                    <p class="text-gray-700 text-base">Test</p>
-                    
-                    <!--<input type="state" value name="STATE" title="Enter state" class="flex-auto p-4 shadow appearance-none border rounded rounded-r-none w-full text-grey-darker" id="australiaState" placeholder="Enter State">-->
-                    
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="searchState">
-                      Select State
-                    </button>
+      <!--Block displaying the number of cases-->
+      <div class="block bg-gray-400 px-4 py-2">
+        <span class="text-center" id="numberWorldCases">World confirmed cases:</span>
+        <span class="text-right mx-24" id="numberAustraliaCases">Australian confirmed cases:</span>
+      </div>
 
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="clearSearch">
-                      Clear Search
-                    </button>
-                    
-                  </div>
-                  
-                    </div>
-                  </div>
+      <!--Main container-->
+      <div class="container mx-auto grid grid-flow-col grid-cols-2 gap-3">
 
-                <!-- World news header card -->
-                  <div class="max-w-sm w-full lg:max-w-full lg:flex">
-                    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">                    
-                    <div class="mb-8">
-                      <div class="text-gray-900 font-bold text-xl mb-2" id="Worldnews">World News</div>
-                      <!-- resulting articles -->
-                    <div class="card-body" id="Worldnewsarticles">
-                    </div>
-                      <div id="WorldnewsOne"></div>
-                      <div id="WorldnewsTwo"></div>
-                      <div id="WorldnewsThree"></div>
-                    </div>
-                    
-                      </div>
-                    </div>
-
-            <!-- Australia news header card -->
-                    <div class="max-w-sm w-full lg:max-w-full lg:flex">
-                      <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">                    
-                      <div class="mb-8">
-                        <div class="text-gray-900 font-bold text-xl mb-2" id="Australiannews">Australian News</div>
-                        <div id="lastUpdatedTime">Last Updated Time: </div>
-
-                        <!-- resulting articles -->
-                        <div class="card-body" id="Ausnewsarticles">
-                        </div>
-                        <div id="AusnewsOne"></div>
-                        <div id="AusnewsTwo"></div>
-                        <div id="AusnewsThree"></div>
-                      </div>
-                    </div>
-                  </div>
-
-            <!-- State news header card -->
-            <div class="max-w-sm w-full lg:max-w-full lg:flex">
-              <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">                    
-              <div class="mb-8">
-                <div class="text-gray-900 font-bold text-xl mb-2" id="Statenews">State News</div>
-                <div id="lastUpdatedTime">Last Updated Time: </div>
-
-                <!-- resulting articles -->
-                <div class="card-body" id="Statenewsarticles">
-                </div>
-                <div id="StatenewsOne"></div>
-                <div id="StatenewsTwo"></div>
-                <div id="StatenewsThree"></div>
-              </div>
-
-                </div>
-              </div>
-              
-              
-              </div>
-            </div>
+        <div class="border-solid border-4 border-gray-600" id="WorldNews">
+          <p>World News</p>
+          <div id="WorldArticles">
+          <a href="#" class="inline-block" id="AusnewsOne">Link 1</a>
+          <a href="#" class="inline-block" id="AusnewsTwo">Link 2</a>
+          <a href="#" class="inline-block" id="AusnewsThree">Link 3</a>
           </div>
         </div>
+        <div class="grid grid-cols-2 border-solid border-4 border-gray-600" id="Aussienews">
+          <div class="grid grid-rows-3">
+              <p>Australian News</p>
+            <div>  
+              <a href="#" id="AusnewsOne">Link 1</a>
+            </div>
+            <div id="AusnewsTwo">
+               <a href="#" id="AusnewsTwo">Link 2</a>
+            </div>
+            <div id="AusNewsThree">
+              <a href="#" id="AusnewsThree">Link 3</a>
+            </div>
+          </div>
+          <div>State Search
 
-    
+            <select id="Cities">
+              <option value="Adelaide">Adelaide</option>
+              <option value="Brisbane" selected>Brisbane</option>
+              <option value="Canberra">Canberra</option>
+              <option value="Darwin">Darwin</option>
+              <option value="Melbourne">Melbourne</option>
+              <option value="Sydney">Sydney</option>
+              <option value="Tasmania">Tasmania</option>
+            </select>
+            
+          </div>
 
-        <!--Main-->
+        </div>
+
+
+
+
+
+
+
+
+      </div>
+
+
         
-        <!--search button, input field for state, number of results return, search period between dates?-->
-        
-        <!--link to new html for recipes or entertainment?? not sure how this works?-->
-
-<<<<<<< HEAD
-                
-=======
-        <!--News Headlines-->
-            <!--World News-->
-            <!--Australian news-->
-            <!--State news-->
-
-
-
-        
->>>>>>> 277f21099d62ae127d2c2a2efbd3223d49765d37
-
-
+           
 
         <!--Footer-->
         
 
     <!--Javascript-->
-<<<<<<< HEAD
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-=======
-
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-              crossorigin="anonymous"></script>
->>>>>>> 277f21099d62ae127d2c2a2efbd3223d49765d37
     <script src="script.js"></script>
 </body>
 
