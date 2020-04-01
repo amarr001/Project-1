@@ -35,7 +35,7 @@ function getBingData(response){
 
 
 function createBingAPICall(){
-    bingURL = "https://cors-anywhere.herokuapp.com/https://bing.com/covid/data/";
+    bingURL = "https://cors-anywhere.herokuapp.com/https://bing.com/covid/data";
     $.ajax({
         url: bingURL,
         method: "GET"})
