@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">-->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
     <title>QIG</title>
@@ -40,8 +40,11 @@
 
       <!--Block displaying the number of cases-->
       <div class="block bg-orange-400 px-4 py-2">
-        <span class="text-center font-sans text-base" id="numberWorldCases">World confirmed cases:</span>
-        <span class="text-right font-sans text-base mx-24" id="numberAustraliaCases">Australian confirmed cases:</span>
+        <span class="text-center font-sans text-base" id="numberWorldCases">World confirmed cases:</span
+        <span class="text-center font-sans text-base mx-24" id="numberWorldRecovCases">World recovered cases:</span>
+        <span class="text-right font-sans text-base mx-24" id="numberAusCases">Australian confirmed cases:</span>
+        <span class="text-right font-sans text-base mx-24" id="numberAusRecovCases">Australian recovered cases:</span>
+
       </div>
 
       <!--Main container-->
@@ -50,23 +53,26 @@
         <div class="border-solid border-4 border-gray-600" id="WorldNews">
           <p class="font-sans text-2xl text-gray-800 text-center">World News</p>
           <div id="WorldArticles">
+
           <a href="#" class="inline-block mx-4 my-4" id="WorldnewsOne">Link 1</a>
           <a href="#" class="inline-block mx-4 my-4" id="WorldnewsTwo">Link 2</a>
           <a href="#" class="inline-block mx-4 my-4" id="WorldnewsThree">Link 3</a>
+
           </div>
         </div>
         <div class="grid grid-cols-2 border-solid border-4 border-gray-600" id="Aussienews">
           <div class="grid grid-rows-3">
-              <p>Australian News</p>
-            <div>  
-              <a href="#" id="AusnewsOne">Link 1</a>
+          <p>Australian News</p>
+            <div id="ausNews1">  
+              <a href="#" class="ausNews1"></a>
             </div>
-            <div id="AusnewsTwo">
-               <a href="#" id="AusnewsTwo">Link 2</a>
+            <div id="ausNews2">
+                <a href="#" class="ausNews2"></a>
             </div>
-            <div id="AusNewsThree">
-              <a href="#" id="AusnewsThree">Link 3</a>
+            <div id="ausNews3">
+                <a href="#" class="ausNews3"></a>
             </div>
+        </div>
           </div>
           <div>State Search
             <p><label for="AusStates">Choose a state:</label></p>
@@ -79,6 +85,13 @@
               <option value="SA">South Australia</option>
               <option value="TAS">Tasmania</option>
             </select>
+
+            <div class="grid grid-cols-2">
+              <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded" id="searchState">
+                Clear
+              </button>
+            </div>
+
             <div class="grid grid-rows-3">
               <div id="StatenewsOne">  
                 <a href="#" id="StatenewsOne">Link 1</a>
@@ -95,23 +108,16 @@
         </div>
 
 
-
-
-
-
-
-
       </div>
+      <div id="covidDisplay"></div>
 
-
-        
-           
 
         <!--Footer-->
         
 
     <!--Javascript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="newsArticlesAus.js"></script>
     <script src="script.js"></script>
     <script src="https://use.fontawesome.com/925f9948a0.js"></script>
 </body>
