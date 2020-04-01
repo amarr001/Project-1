@@ -37,10 +37,30 @@ $(document).ready(function() {
             let recovered = $("<p>").text("Recovered: " + JSON.stringify(statsAustralia[stateIndex].recovered));
             let getTime  = $("<p>").text("Last updated: " + JSON.stringify(statsAustralia[stateIndex].lastUpdate));
             //console.log(getTime);
-            $("#covidDisplay").append(state,confirmed,deaths,recovered,getTime);
+            $("#covidDisplay").prepend(state,confirmed,deaths,recovered,getTime);
         })
 
     };
+
+
+    function renderTotalCase(){
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://covid19-tracker.p.rapidapi.com/all",
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "covid19-tracker.p.rapidapi.com",
+                "x-rapidapi-key": "74d0e0648emshac3b5765abb28c1p16082ajsn70e50a2069eb"
+            }
+        }
+        
+        $.ajax(settings).done(function (response) {
+            $("#numberWorldCases").text("World confirmed cases: " + JSON.stringify(response.confirmed));
+        });
+    }
+
+    renderTotalCase()
 
     // getting the top news from google news for australia
     getTopNewsAU();
