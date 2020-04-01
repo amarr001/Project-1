@@ -13,7 +13,7 @@ $(document).ready(function() {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-                "x-rapidapi-key": "3368eb3a0fmsh6fa4c6e2177a0d6p15bd2djsn0fd20a6e49da"
+                "x-rapidapi-key": rapidAPIkey
             }
         }
         $.ajax(settings).done(getCovidData).fail(errormsg);
@@ -24,9 +24,12 @@ $(document).ready(function() {
     function getCovidData(response){
         console.log(response);
         let statsAustralia = response.data.covid19Stats;
-        let stateIndex = statsAustralia.findIndex( area => area.province === "South Australia");
-        console.log(stateIndex);
-//     console.log(data);   
+        $("#AusStates").change(function(){
+            var stateText = $("#AusStates option:selected").text();
+            console.log(stateText);
+            let stateIndex = statsAustralia.findIndex( area => area.province === stateText)
+            console.log(stateIndex);
+            //console.log(data);   
             let state = $("<p>").text("State: " + JSON.stringify(statsAustralia[stateIndex].province));
             //console.log(state);
             let confirmed = $("<p>").text("Confirmed: " + JSON.stringify(statsAustralia[stateIndex].confirmed));
@@ -35,6 +38,7 @@ $(document).ready(function() {
             let getTime  = $("<p>").text("Last updated: " + JSON.stringify(statsAustralia[stateIndex].lastUpdate));
             //console.log(getTime);
             $("#covidDisplay").append(state,confirmed,deaths,recovered,getTime);
+        })
 
     };
 
@@ -60,23 +64,6 @@ $(document).ready(function() {
         console.log("Unable to get any data");
     }
     
-    
-    const settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Australia",
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-            "x-rapidapi-key": rapidAPIkey
-        }
-    }
-    $.ajax(settings).done(function (response) {
-        let statsAustralia = response.data.covid19Stats
-        statsAustralia.forEach(state => {
-            // console.log(state)
-            console.log(`state: ${state.province} -- confirmed: ${state.confirmed} -- recovered: ${state.recovered}`);
-        })
-    });
+
 });
     
