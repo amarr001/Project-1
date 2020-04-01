@@ -2,7 +2,7 @@ $(document).ready(function() {
     var googleAPIkey = "18c881248ae94a0eb9c6e2320f2ab227";
 
     // getting the bing data for covid-19 cases
-    getBingData();
+    //getBingData();
 
     function getBingData(){
         bingURL = "https://cors-anywhere.herokuapp.com/https://bing.com/covid/data";
@@ -32,7 +32,33 @@ $(document).ready(function() {
         
     }
     
-   
+    // createRapidApiData()
+
+    // //getting data from RapidApi
+    // function createRapidApiData(){
+    //     var settings = {
+    //         "async": true,
+    //         "crossDomain": true,
+    //         "url": "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Australia",
+    //         "method": "GET",
+    //         "headers": {
+    //             "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+    //             "x-rapidapi-key": "3368eb3a0fmsh6fa4c6e2177a0d6p15bd2djsn0fd20a6e49da"
+    //         }
+    //     }
+    //     $.ajax(settings).done(getCovidData).fail(errormsg);
+    //     };
+
+    
+    // function getCovidData(response){
+    //     let statsAustralia = response.data.covid19Stats;
+
+    //     statsAustralia.forEach(state => {
+    //         // console.log(state)
+    //         console.log(`state: ${state.province} -- confirmed: ${state.confirmed} -- recovered: ${state.recovered}`);
+    //     }
+    // };
+
     // getting the top news from google news for australia
     getTopNewsAU();
 
@@ -46,7 +72,7 @@ $(document).ready(function() {
     }
     
     function populateNews(response){
-        console.log(response)
+        console.log(response);
     }
     
     
@@ -54,6 +80,24 @@ $(document).ready(function() {
     function errormsg(){
         console.log("Unable to get any data");
     }
-        
+    
+    
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Australia",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+            "x-rapidapi-key": "3368eb3a0fmsh6fa4c6e2177a0d6p15bd2djsn0fd20a6e49da"
+        }
+    }
+    $.ajax(settings).done(function (response) {
+        let statsAustralia = response.data.covid19Stats
+        statsAustralia.forEach(state => {
+            // console.log(state)
+            console.log(`state: ${state.province} -- confirmed: ${state.confirmed} -- recovered: ${state.recovered}`);
+        })
+    });
 });
     

@@ -12,38 +12,38 @@ function getTopNewsAU(){
 
 //getTopNewsAU();
 
-});
 
-function getBingData(response){
-    let AuIndex = response.areas.findIndex( area => area.id === "australia");
-    console.log(AuIndex);
-    data = response.areas[AuIndex];
-    console.log(data);
-    let i = 0;
-    //for ( var i = 0; i < 8; i++){   
-        $("#stateName").text(JSON.stringify(data.areas[i].displayName));
-        console.log(data.areas[i].displayName);
-        $("#totalConfirmed").text(JSON.stringify(data.areas[i].totalConfirmed));
-        $("#totalDeaths").text(JSON.stringify(data.areas[i].totalDeaths));
-        $("#totalRecovered").text(JSON.stringify(data.areas[i].totalRecovered));
-        let getTime  = JSON.stringify(data.areas[i].lastUpdated);
-        //console.log(getTime);
-        $("#lastUpdated").text(getTime);
-     //}
+
+// function getBingData(response){
+//     let AuIndex = response.areas.findIndex( area => area.id === "australia");
+//     console.log(AuIndex);
+//     data = response.areas[AuIndex];
+//     console.log(data);
+//     let i = 0;
+//     //for ( var i = 0; i < 8; i++){   
+//         $("#stateName").text(JSON.stringify(data.areas[i].displayName));
+//         console.log(data.areas[i].displayName);
+//         $("#totalConfirmed").text(JSON.stringify(data.areas[i].totalConfirmed));
+//         $("#totalDeaths").text(JSON.stringify(data.areas[i].totalDeaths));
+//         $("#totalRecovered").text(JSON.stringify(data.areas[i].totalRecovered));
+//         let getTime  = JSON.stringify(data.areas[i].lastUpdated);
+//         //console.log(getTime);
+//         $("#lastUpdated").text(getTime);
+//      //}
     
-}
+// }
 
 
-function createBingAPICall(){
-    bingURL = "https://cors-anywhere.herokuapp.com/https://bing.com/covid/data";
-    $.ajax({
-        url: bingURL,
-        method: "GET"})
-        .then(getBingData)
-        .fail(errormsg);
-}
+// function createBingAPICall(){
+//     bingURL = "https://cors-anywhere.herokuapp.com/https://bing.com/covid/data";
+//     $.ajax({
+//         url: bingURL,
+//         method: "GET"})
+//         .then(getBingData)
+//         .fail(errormsg);
+// }
 
-createBingAPICall();
+// createBingAPICall();
 
 function populateInfo(response){
     console.log(response)
@@ -53,13 +53,28 @@ function errormsg(){
     console.log("Unable to get any data")
 }
 
-// idk yet optional ??
-// function AUTotal() {
-//     $.ajax({
-//         url: "https://corona-api.com/countries/AU",
-//         method: "GET"})
-//         .then(populateInfo)
-//         .fail(errormsg);
-// }
 
-// //AUTotal();
+function createRapidApiCall(){
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Australia",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+            "x-rapidapi-key": "3368eb3a0fmsh6fa4c6e2177a0d6p15bd2djsn0fd20a6e49da"
+        }
+    }  
+    $.ajax(settings).done(getCovidData).fail(errormsg)
+    };
+
+function getCovidData(response){
+    let statsAustralia = response.data.covid19Stats;
+    statsAustralia.forEach(state => {
+        // console.log(state)
+        console.log(`state: ${state.province} -- confirmed: ${state.confirmed} -- recovered: ${state.recovered}`)}
+    };
+
+createRapidApiCall()
+
+});
