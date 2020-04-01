@@ -38,21 +38,28 @@ function getAusConfirmedCases() {
 
 // Function to get total confirmed and recovered cases world wide
 function getWorldConfirmedCases(){
-    $.ajax({
-        url: "https://cors-anywhere.herokuapp.com/https://bing.com/covid/data/",
-        method: "GET",
-        success: function(response){
-            console.log(response.totalConfirmed);
-            console.log(response.totalRecovered);
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Australia",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+            "x-rapidapi-key": "3368eb3a0fmsh6fa4c6e2177a0d6p15bd2djsn0fd20a6e49da"
+        }
+    }
+    
+    $.ajax(settings).done(function (response) {
+        let statsAustralia = response.data.covid19Stats
 
-            totalCases = response.areas[18].areas;
-            totalCases.forEach((casePerSate) => console.log(`${casePerSate.displayName} ${casePerSate.totalConfirmed}`))
-        },
-        error: function(err){
-            console.log("Cannot retrieve data");
-        }  
-    })
+        statsAustralia.forEach(state => {
+            // console.log(state)
+            console.log(`state: ${state.province} -- confirmed: ${state.confirmed} -- recovered: ${state.recovered}`);
+        })
+    });
+    
 }
+
 
 // getAusArticles();
 getWorldConfirmedCases();
