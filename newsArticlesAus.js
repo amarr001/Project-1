@@ -13,7 +13,7 @@ $(document).ready(function () {
 
                 // First Article
                 for (let i = 1; i < 4; i++) {
-                    $(`#ausNews${i}`).prepend("<p>" + newsArticles[0].description + "</p>")
+                    $(`#ausNews${i}`).prepend("<p>" + newsArticles[i].description + "</p>")
                     $(`#ausNews${i}`).prepend("<h3>" + newsArticles[i].title + "</h3>")
                     articlelink = $(`.ausNews${i}`)
                     articlelink.attr("href", newsArticles[i].url)
