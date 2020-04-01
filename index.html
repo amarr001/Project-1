@@ -1,17 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!--<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">-->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>QIG</title>
 </head>
-<body>
 
-    <script
-			  src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-              crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    
+<body class="bg-blue-500">
+    <!--Header-->
+
+    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
+          <span class="font-semibold text-xl tracking-tight">QIG - Quarantine and Isolation Guide</span>
+        </div>
+        <div class="block lg:hidden">
+        </div>
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+          <div class="text-sm lg:flex-grow">
+            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+              Home
+            </a>
+            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+              Quarantine Guide
+            </a>
+            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+              Entertainment
+            </a>
+          </div>
+        </div>
+      </nav>
+
+
+        <!--Main-->
+
+
+      <!--Block displaying the number of cases-->
+      <div class="block bg-gray-400 px-4 py-2">
+        <span class="text-center" id="numberWorldCases">World confirmed cases:</span>
+        <span class="text-right mx-24" id="numberAustraliaCases">Australian confirmed cases:</span>
+      </div>
+
+      <!--Main container-->
+      <div class="container mx-auto grid grid-flow-col grid-cols-2 gap-3">
+
+        <div class="border-solid border-4 border-gray-600" id="WorldNews">
+          <p>World News</p>
+          <div id="WorldArticles">
+          <!-- <a href="#" class="inline-block" id="AusnewsOne">Link 1</a>
+          <a href="#" class="inline-block" id="AusnewsTwo">Link 2</a>
+          <a href="#" class="inline-block" id="AusnewsThree">Link 3</a> -->
+          </div>
+        </div>
+        <div class="grid grid-cols-2 border-solid border-4 border-gray-600" id="Aussienews">
+          <div class="grid grid-rows-3">
+              <p>Australian News</p>
+            <div id="ausNews1">  
+              <a href="#" class="ausNews1"></a>
+            </div>
+            <div id="ausNews2">
+                <a href="#" class="ausNews2"></a>
+            </div>
+            <div id="ausNews3">
+                <a href="#" class="ausNews3"></a>
+            </div>
+          </div>
+          <div>State Search
+
+            <select id="Cities">
+              <option value="Adelaide">Adelaide</option>
+              <option value="Brisbane" selected>Brisbane</option>
+              <option value="Canberra">Canberra</option>
+              <option value="Darwin">Darwin</option>
+              <option value="Melbourne">Melbourne</option>
+              <option value="Sydney">Sydney</option>
+              <option value="Tasmania">Tasmania</option>
+            </select>
+            
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+      </div>
+
+
+        
+           
+
+        <!--Footer-->
+        
+
+    <!--Javascript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="newsArticlesAus.js"></script>
 </body>
+
 </html>
