@@ -7,30 +7,28 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
+   
     <title>QIG</title>
 </head>
 
 <body class="bg-gray-300">
     <!--Header-->
 
-    <nav class="flex flex-wrap bg-orange-600 p-6 border rounded-br-lg">
-      <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <span class="font-semibold text-3xl tracking-tight">QIG - Quarantine and Isolation Guide</span>
-      </div>
-      <div class="block lg:hidden">
-      </div>
+    <nav class="block bg-yellow-500 border rounded-br-lg">
+      <div class="m-2 text-white">
+        <span class="sm:flex-wrap md:flex-wrap font-semibold text-3xl">QIG - Quarantine and Isolation Guide</span>
       
-        <div class="text-base lg:flex-grow flex items-center justify-end">
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+        <div class="mx-2 text-base font-semibold flex sm:flex-wrap md:flex-wrap items-center justify-end">
+          <a href="#responsive-header" class="mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
             Home
           </a>
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-            Quarantine Guide
+          <a href="#responsive-header" class="mt-4  lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+            Quarantine Guide 
           </a>
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white">
+          <a href="#responsive-header" class="mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white">
             Entertainment
           </a>
-        
+       </div> 
       </div>
     </nav>
 <!--w-full block flex-grow lg:flex lg:items-center lg:w-auto"-->
@@ -54,7 +52,7 @@
       <!--Main container-->
       <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
 
-        <div class="border-solid border-4 border-gray-600" id="WorldNews">
+        <div class="border-solid border-4 font-bold border-gray-600" id="WorldNews">
           <p class="font-sans text-4xl text-gray-800 text-left ml-3">World News</p>
           <div id="WorldArticles">
 
@@ -66,21 +64,24 @@
         </div>
         <div class="grid grid-cols-2 border-solid border-4 border-gray-600" id="Aussienews">
           
-          <p class="font-sans text-4xl text-gray-800 text-left ml-3">Australian News</p>
+          <p class="font-sans text-4xl font-bold text-gray-800 text-left ml-3">Australian News</p>
             <div id="ausNews1">  
-              <a href="#" class="ausNews1"></a>
+              <a class="ausNews1 buttonLink"></a>
+              
             </div>
             <div id="ausNews2">
-                <a href="#" class="ausNews2"></a>
+                <a class="ausNews2 buttonLink"></a>
+                
             </div>
             <div id="ausNews3">
-                <a href="#" class="ausNews3"></a>
+                <a class="ausNews3 buttonLink"></a>
+                
             
         </div>
           </div>
         
           <div class="border-solid border-4 border-gray-600">
-            <p class="font-sans text-4xl text-gray-800 text-left ml-3"> State Search</p>
+            <p class="font-sans font-bold text-4xl text-gray-800 text-left ml-3"> State Search</p>
             <p><label for="AusStates">Choose a state:</label></p>
             <select id="AusStates">
               <option value="ACT">Australian Capital Territory</option>
@@ -119,6 +120,7 @@
 
 
         <!--Footer-->
+        
         
 
     <!--Javascript-->
