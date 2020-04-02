@@ -16,7 +16,7 @@ $(document).ready(function () {
                     $(`#ausNews${i}`).prepend("<p>" + newsArticles[i].description + "</p>")
                     $(`#ausNews${i}`).prepend("<h3>" + newsArticles[i].title + "</h3>")
                     articlelink = $(`.ausNews${i}`)
-                    articlelink.attr("href", newsArticles[i].url)
+                    articlelink.attr("OnClick", `location.href = '${newsArticles[i].url}'`)
                     articlelink.text("click here to read the full article")
                 }
 
