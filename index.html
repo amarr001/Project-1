@@ -2,130 +2,130 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
-    <title>QIG</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
+  <title>QIG</title>
 </head>
 
 <body class="bg-gray-300">
-    <!--Header-->
+  <!--Header-->
 
-    <nav class="flex flex-wrap bg-orange-600 p-6 border rounded-br-lg">
-      <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <span class="font-semibold text-3xl tracking-tight">QIG - Quarantine and Isolation Guide</span>
+  <nav class="flex flex-wrap bg-orange-600 p-6 border rounded-br-lg">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <span class="font-semibold text-3xl tracking-tight">QIG - Quarantine and Isolation Guide</span>
+    </div>
+    <div class="block lg:hidden">
+    </div>
+
+    <div class="text-base lg:flex-grow flex items-center justify-end">
+      <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+        Home
+      </a>
+      <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+        Quarantine Guide
+      </a>
+      <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white">
+        Entertainment
+      </a>
+
+    </div>
+  </nav>
+  <!--w-full block flex-grow lg:flex lg:items-center lg:w-auto"-->
+
+  <!--Main-->
+
+
+  <!--Block displaying the number of cases-->
+  <div class="table w-flex bg-teal-400 border-solid border-4 rounded-br-lg border-teal-700">
+    <div class="table-row-group">
+      <div class="table-row">
+        <span class="table-cell px-4 py-1 text-base" id="numberWorldCases">World confirmed cases:</span>
+        <span class="table-cell px-4 py-1 text-base" id="numberWorldRecovCases">World recovered cases:</span>
       </div>
-      <div class="block lg:hidden">
-      </div>
-      
-        <div class="text-base lg:flex-grow flex items-center justify-end">
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-            Home
-          </a>
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-            Quarantine Guide
-          </a>
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white">
-            Entertainment
-          </a>
-        
-      </div>
-    </nav>
-<!--w-full block flex-grow lg:flex lg:items-center lg:w-auto"-->
-
-        <!--Main-->
-
-
-      <!--Block displaying the number of cases-->
-      <div class="table w-flex bg-teal-400 border-solid border-4 rounded-br-lg border-teal-700">
-        <div class="table-row-group">
-          <div class="table-row">
-          <span class="table-cell px-4 py-1 text-base" id="numberWorldCases">World confirmed cases:</span>
-          <span class="table-cell px-4 py-1 text-base" id="numberWorldRecovCases">World recovered cases:</span>
-        </div>
-        <div class="table-row">
+      <div class="table-row">
         <span class="table-cell px-4 py-1 text-base" id="numberAusCases">Australian confirmed cases:</span>
         <span class="table-cell px-4 py-1 text-base" id="numberAusRecovCases">Australian recovered cases:</span>
+      </div>
+    </div>
+  </div>
+  <!--Main container-->
+  <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
+
+    <div class="border-solid border-4 border-gray-600" id="WorldNews">
+      <p class="font-sans text-4xl text-gray-800 text-left ml-3">World News</p>
+      <div id="WorldArticles">
+
+        <a href="#" class="inline-block mx-4 my-4" id="WorldnewsOne">Link 1</a>
+        <a href="#" class="inline-block mx-4 my-4" id="WorldnewsTwo">Link 2</a>
+        <a href="#" class="inline-block mx-4 my-4" id="WorldnewsThree">Link 3</a>
+
+      </div>
+    </div>
+    <div class="grid grid-cols-2 border-solid border-4 border-gray-600" id="Aussienews">
+
+      <p class="font-sans text-4xl text-gray-800 text-left ml-3">Australian News</p>
+      <div id="ausNews1">
+        <button class="ausNews1"></button>
+      </div>
+      <div id="ausNews2">
+        <button class="ausNews1"></button>
+      </div>
+      <div id="ausNews3">
+        <button class="ausNews1"></button>
+
+      </div>
+    </div>
+
+    <div class="border-solid border-4 border-gray-600">
+      <p class="font-sans text-4xl text-gray-800 text-left ml-3"> State Search</p>
+      <p><label for="AusStates">Choose a state:</label></p>
+      <select id="AusStates">
+        <option value="ACT">Australian Capital Territory</option>
+        <option value="QLD">Queensland</option>
+        <option value="NSW">New South Wales</option>
+        <option value="NT">Northern Territory</option>
+        <option value="VIC">Victoria</option>
+        <option value="SA">South Australia</option>
+        <option value="TAS">Tasmania</option>
+      </select>
+
+      <div class="grid grid-cols-2">
+        <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-6 rounded" id="searchState">
+          Clear
+        </button>
+      </div>
+
+      <div class="grid grid-rows-3">
+        <div id="StatenewsOne">
+          <a href="#" id="StatenewsOne">Link 1</a>
+        </div>
+        <div id="StatenewsTwo">
+          <a href="#" id="StatenewsTwo">Link 2</a>
+        </div>
+        <div id="StateNewsThree">
+          <a href="#" id="StatenewsThree">Link 3</a>
         </div>
       </div>
     </div>
-      <!--Main container-->
-      <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
 
-        <div class="border-solid border-4 border-gray-600" id="WorldNews">
-          <p class="font-sans text-4xl text-gray-800 text-left ml-3">World News</p>
-          <div id="WorldArticles">
-
-          <a href="#" class="inline-block mx-4 my-4" id="WorldnewsOne">Link 1</a>
-          <a href="#" class="inline-block mx-4 my-4" id="WorldnewsTwo">Link 2</a>
-          <a href="#" class="inline-block mx-4 my-4" id="WorldnewsThree">Link 3</a>
-
-          </div>
-        </div>
-        <div class="grid grid-cols-2 border-solid border-4 border-gray-600" id="Aussienews">
-          
-          <p class="font-sans text-4xl text-gray-800 text-left ml-3">Australian News</p>
-            <div id="ausNews1">  
-              <a href="#" class="ausNews1"></a>
-            </div>
-            <div id="ausNews2">
-                <a href="#" class="ausNews2"></a>
-            </div>
-            <div id="ausNews3">
-                <a href="#" class="ausNews3"></a>
-            
-        </div>
-          </div>
-        
-          <div class="border-solid border-4 border-gray-600">
-            <p class="font-sans text-4xl text-gray-800 text-left ml-3"> State Search</p>
-            <p><label for="AusStates">Choose a state:</label></p>
-            <select id="AusStates">
-              <option value="ACT">Australian Capital Territory</option>
-              <option value="QLD">Queensland</option>
-              <option value="NSW">New South Wales</option>
-              <option value="NT">Northern Territory</option>
-              <option value="VIC">Victoria</option>
-              <option value="SA">South Australia</option>
-              <option value="TAS">Tasmania</option>
-            </select>
-
-            <div class="grid grid-cols-2">
-              <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-6 rounded" id="searchState">
-                Clear
-              </button>
-            </div>
-
-            <div class="grid grid-rows-3">
-              <div id="StatenewsOne">  
-                <a href="#" id="StatenewsOne">Link 1</a>
-              </div>
-              <div id="StatenewsTwo">
-                 <a href="#" id="StatenewsTwo">Link 2</a>
-              </div>
-              <div id="StateNewsThree">
-                <a href="#" id="StatenewsThree">Link 3</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
+  </div>
 
 
-      </div>
-      <div id="covidDisplay"></div>
+  </div>
+  <div id="covidDisplay"></div>
 
 
-        <!--Footer-->
-        
+  <!--Footer-->
 
-    <!--Javascript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="newsArticlesAus.js"></script>
-    <script src="script.js"></script>
-   
+
+  <!--Javascript-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="newsArticlesAus.js"></script>
+  <script src="script.js"></script>
+
 </body>
 
 </html>
