@@ -10,48 +10,52 @@
     <title>QIG</title>
 </head>
 
-<body class="bg-blue-500">
+<body class="bg-gray-300">
     <!--Header-->
 
-    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-        <div class="flex items-center flex-shrink-0 text-white mr-6">
-          <span class="font-semibold text-xl tracking-tight">QIG - Quarantine and Isolation Guide</span>
-        </div>
-        <div class="block lg:hidden">
-        </div>
-        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div class="text-sm lg:flex-grow">
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-              Home
-            </a>
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-              Quarantine Guide
-            </a>
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
-              Entertainment
-            </a>
-          </div>
-        </div>
-      </nav>
-
+    <nav class="flex flex-wrap bg-orange-600 p-6 border rounded-br-lg">
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <span class="font-semibold text-3xl tracking-tight">QIG - Quarantine and Isolation Guide</span>
+      </div>
+      <div class="block lg:hidden">
+      </div>
+      
+        <div class="text-base lg:flex-grow flex items-center justify-end">
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+            Home
+          </a>
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+            Quarantine Guide
+          </a>
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white">
+            Entertainment
+          </a>
+        
+      </div>
+    </nav>
+<!--w-full block flex-grow lg:flex lg:items-center lg:w-auto"-->
 
         <!--Main-->
 
 
       <!--Block displaying the number of cases-->
-      <div class="block bg-orange-400 px-4 py-2">
-        <span class="text-center font-sans text-base" id="numberWorldCases">World confirmed cases:</span
-        <span class="text-center font-sans text-base mx-24" id="numberWorldRecovCases">World recovered cases:</span>
-        <span class="text-right font-sans text-base mx-24" id="numberAusCases">Australian confirmed cases:</span>
-        <span class="text-right font-sans text-base mx-24" id="numberAusRecovCases">Australian recovered cases:</span>
-
+      <div class="table w-flex bg-teal-400 border-solid border-4 rounded-br-lg border-teal-700">
+        <div class="table-row-group">
+          <div class="table-row">
+          <span class="table-cell px-4 py-1 text-base" id="numberWorldCases">World confirmed cases:</span>
+          <span class="table-cell px-4 py-1 text-base" id="numberWorldRecovCases">World recovered cases:</span>
+        </div>
+        <div class="table-row">
+        <span class="table-cell px-4 py-1 text-base" id="numberAusCases">Australian confirmed cases:</span>
+        <span class="table-cell px-4 py-1 text-base" id="numberAusRecovCases">Australian recovered cases:</span>
+        </div>
       </div>
-
+    </div>
       <!--Main container-->
-      <div class="container mx-auto grid grid-cols-1 gap-3">
+      <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
 
         <div class="border-solid border-4 border-gray-600" id="WorldNews">
-          <p class="font-sans text-2xl text-gray-800 text-center">World News</p>
+          <p class="font-sans text-4xl text-gray-800 text-left ml-3">World News</p>
           <div id="WorldArticles">
 
           <a href="#" class="inline-block mx-4 my-4" id="WorldnewsOne">Link 1</a>
@@ -61,20 +65,22 @@
           </div>
         </div>
         <div class="grid grid-cols-2 border-solid border-4 border-gray-600" id="Aussienews">
-          <div class="grid grid-rows-3">
-          <p>Australian News</p>
-            <div id="ausNews1">
-              <button class="ausNews1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"></button>
+          
+          <p class="font-sans text-4xl text-gray-800 text-left ml-3">Australian News</p>
+            <div id="ausNews1">  
+              <a href="#" class="ausNews1"></a>
             </div>
             <div id="ausNews2">
-              <button class="ausNews2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"></button>
+                <a href="#" class="ausNews2"></a>
             </div>
             <div id="ausNews3">
-              <button class="ausNews3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"></button>
-            </div>
+                <a href="#" class="ausNews3"></a>
+            
         </div>
           </div>
-          <div>State Search
+        
+          <div class="border-solid border-4 border-gray-600">
+            <p class="font-sans text-4xl text-gray-800 text-left ml-3"> State Search</p>
             <p><label for="AusStates">Choose a state:</label></p>
             <select id="AusStates">
               <option value="ACT">Australian Capital Territory</option>
@@ -87,7 +93,7 @@
             </select>
 
             <div class="grid grid-cols-2">
-              <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded" id="searchState">
+              <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-6 rounded" id="searchState">
                 Clear
               </button>
             </div>
@@ -109,6 +115,7 @@
 
 
       </div>
+      <div id="covidDisplay"></div>
 
 
         <!--Footer-->
@@ -117,8 +124,8 @@
     <!--Javascript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="newsArticlesAus.js"></script>
-    <!-- <script src="script.js"></script> -->
-    <script src="https://use.fontawesome.com/925f9948a0.js"></script>
+    <script src="script.js"></script>
+   
 </body>
 
 </html>
