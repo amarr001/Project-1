@@ -22,12 +22,11 @@ $(document).ready(function () {
 
                     newsTitle = $("<h3>" + newsArticles[i].title + "</h3>");
                     newsDescription = $("<p>" + newsDescription + "</p>");
-                    
-
-                    $(`#ausNews${i}`).prepend(newsDescription)
-                    $(`#ausNews${i}`).prepend(newsTitle)
                     newsTitle.attr("id", "title");
                     newsDescription.attr("id", "description");
+
+                    $(`#ausNews${i}`).prepend(newsTitle)
+                    $(`#ausNews${i}`).prepend(newsDescription)
                     
                     articlelink = $("<a>");
                     articlelink.attr("href", newsArticles[i].url)
