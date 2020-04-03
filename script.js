@@ -57,9 +57,17 @@ $(document).ready(function() {
     
     function populateNews(response){
         console.log(response);
-        //  let title = $("</p>").text(response.)
+        for(let i = 0; i < 3; i++){
+        let title = $("<h3>").text(response.articles[i].title);
+        let desc = $("<p>").text(response.articles[i].description);
+        let articleLink = $("<a>").text("click here to read the full article").attr("OnClick", "location.href" = response.articles[i].url);
+        
+        $(`#worldNews${i}`).prepend(title);
+        $(`#worldNews${i}`).prepend(desc);
         
     }
+    }
+       
     
     
     //error message that is going to be shown.
