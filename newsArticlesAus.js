@@ -1,33 +1,49 @@
 $(document).ready(function () {
     function getAusArticles() {
         $.ajax({
-            url: "http://newsapi.org/v2/top-headlines?country=au&category=health&apiKey=0e7b5f109619407cb1b122a24f82e1dc",
+            // URL of the API
+            url: "https://newsapi.org/v2/top-headlines?country=au&category=health&apiKey=0e7b5f109619407cb1b122a24f82e1dc",
             method: "GET",
             success: function (incomingData) {
-                // console.log(incomingData.articles);
 
+                // Variables for reading data from the JSON
                 let newsArticles = incomingData.articles;
                 let articlelink;
+                let newsDescription;
+                let newsTitle;
 
-                // console.log(newsArticles[0].title)
 
-                // First Article
+                // For loop to read the data from the incoming articles
+
                 for (let i = 1; i < 4; i++) {
-                    $(`#ausNews${i}`).prepend("<p>" + newsArticles[0].description + "</p>")
-                    $(`#ausNews${i}`).prepend("<h3>" + newsArticles[i].title + "</h3>")
-                    articlelink = $(`.ausNews${i}`)
-                    articlelink.attr("href", newsArticles[i].url)
-                    articlelink.text("click here to read the full article")
-                }
 
+                    newsDescription = newsArticles[i].description
+
+                    newsTitle = $("<h3>" + newsArticles[i].title + "</h3>");
+                    newsDescription = $("<p>" + newsDescription + "</p>");
+                    newsTitle.attr("id", "title");
+                    newsDescription.attr("id", "description");
+
+                    $(`#ausNews${i}`).prepend(newsTitle)
+                    $(`#ausNews${i}`).prepend(newsDescription)
+                    
+                    articlelink = $("<a>");
+                    articlelink.attr("href", newsArticles[i].url)
+                    articlelink.attr({"class": "linkstyle"})
+                    articlelink.text("Click here to read the full article")
+                    $(`.ausNews${i}`).prepend(articlelink);
+                    
+                    
+                    
+
+                }
             },
             error: function (uvData) {
-                //console.log(uvData);
-                console.log("There was an error");
+                console.log(uvData);
             }
-
         })
     }
 
+    // Running the function
     getAusArticles();
 })
