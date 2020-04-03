@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
@@ -10,10 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
    
     <title>QIG</title>
+
 </head>
 
 <body class="bg-gray-300">
-    <!--Header-->
+  <!--Header-->
+
 
     <nav class="block bg-yellow-500 border rounded-br-lg">
       <div class="m-2 text-white">
@@ -32,9 +35,11 @@
        </div> 
       </div>
     </nav>
-<!--w-full block flex-grow lg:flex lg:items-center lg:w-auto"-->
 
-        <!--Main-->
+
+  <!--w-full block flex-grow lg:flex lg:items-center lg:w-auto"-->
+
+  <!--Main-->
 
 
       <!--Block displaying the number of cases-->
@@ -50,19 +55,60 @@
         </div>
       </div>
     </div>
-      <!--Main container-->
-      <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
+  </div>
+  <!--Main container-->
+  <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
+
 
         <div class="border-solid border-4 font-bold border-gray-600" id="WorldNews">
           <h1 class="font-sans text-4xl text-gray-800 text-left ml-3">World News</h1>
           <div id="WorldArticles">
 
-          <a href="#" class="inline-block mx-4 my-4" id="WorldnewsOne">Link 1</a>
-          <a href="#" class="inline-block mx-4 my-4" id="WorldnewsTwo">Link 2</a>
-          <a href="#" class="inline-block mx-4 my-4" id="WorldnewsThree">Link 3</a>
+        <a href="#" class="inline-block mx-4 my-4" id="WorldnewsOne">Link 1</a>
+        <a href="#" class="inline-block mx-4 my-4" id="WorldnewsTwo">Link 2</a>
+        <a href="#" class="inline-block mx-4 my-4" id="WorldnewsThree">Link 3</a>
 
-          </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 border-solid border-4 border-gray-600" id="Aussienews">
+
+      <p class="font-sans text-4xl text-gray-800 text-left ml-3">Australian News</p>
+      <div id="ausNews1">
+        <button class="ausNews1"></button>
+      </div>
+      <div id="ausNews2">
+        <button class="ausNews2"></button>
+      </div>
+      <div id="ausNews3">
+        <button class="ausNews3"></button>
+
+      </div>
+    </div>
+
+    <div class="border-solid border-4 border-gray-600">
+      <p class="font-sans text-4xl text-gray-800 text-left ml-3"> State Search</p>
+      <p><label for="AusStates">Choose a state:</label></p>
+      <select id="AusStates">
+        <option value="ACT">Australian Capital Territory</option>
+        <option value="QLD">Queensland</option>
+        <option value="NSW">New South Wales</option>
+        <option value="NT">Northern Territory</option>
+        <option value="VIC">Victoria</option>
+        <option value="SA">South Australia</option>
+        <option value="TAS">Tasmania</option>
+      </select>
+
+      <div class="grid grid-cols-2">
+        <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-6 rounded" id="searchState">
+          Clear
+        </button>
+      </div>
+
+      <div class="grid grid-rows-3">
+        <div id="StatenewsOne">
+          <a href="#" id="StatenewsOne">Link 1</a>
         </div>
+
 
         <div class="grid gap-4" id="Aussienews">
           
@@ -111,21 +157,27 @@
           </div>
 
         </div>
-
-
       </div>
-      <div id="covidDisplay"></div>
+    </div>
+
+  </div>
 
 
-        <!--Footer-->
+  </div>
+  <div id="covidDisplay"></div>
+
+
+  <!--Footer-->
+
         
         
 
-    <!--Javascript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="newsArticlesAus.js"></script>
-    <script src="script.js"></script>
-   
+  <!--Javascript-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="newsArticlesAus.js"></script>
+  <script src="script.js"></script>
+
+
 </body>
 
 </html>
