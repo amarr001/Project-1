@@ -1,12 +1,22 @@
 
 
 .linkstyle{
-background-color: tomato; 
+
+color: teal;
+margin: 10px;
+
+ 
 }
 
 #description{
-  background-color: violet;
+  font-size: larger;
+  font-weight: bold;
+  color:  #116979;
+  margin: 10px;
 }
 #title{
-  background-color: yellow;
+  font-size: x-large;
+  font-weight: bold;
+  margin: 10px;
+  color: #10375c;
 }

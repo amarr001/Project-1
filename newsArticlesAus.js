@@ -19,19 +19,21 @@ $(document).ready(function () {
                 // First Article
                 for (let i = 1; i < 4; i++) {
                     newsDescription = newsArticles[i].description
-                    newsTitle = newsArticles[i].title
+
+                    newsTitle = $("<h3>" + newsArticles[i].title + "</h3>");
+                    newsDescription = $("<p>" + newsDescription + "</p>");
                     
 
-                    $(`#ausNews${i}`).prepend("<p>" + newsDescription + "</p>")
-                    $(`#ausNews${i}`).prepend("<h3>" + newsTitle + "</h3>")
-                    $("h3").attr("id", "title");
-                    $("p").attr("id", "description");
+                    $(`#ausNews${i}`).prepend(newsDescription)
+                    $(`#ausNews${i}`).prepend(newsTitle)
+                    newsTitle.attr("id", "title");
+                    newsDescription.attr("id", "description");
                     
-                    articlelink = $(`.ausNews${i}`)
+                    articlelink = $("<a>");
                     articlelink.attr("href", newsArticles[i].url)
                     articlelink.attr({"class": "linkstyle"})
-                    articlelink.text("click here to read the full article")
-                    
+                    articlelink.text("Click here to read the full article")
+                    $(`.ausNews${i}`).prepend(articlelink);
                     
                     
                     
