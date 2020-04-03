@@ -68,8 +68,6 @@ $(document).ready(function() {
         }
     }
        
-    
-    
     //error message that is going to be shown.
     function errormsg(){
         console.log("Unable to get any data");
