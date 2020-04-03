@@ -12,22 +12,30 @@ $(document).ready(function () {
                 let newsDescription;
                 let newsTitle;
 
+
                 // For loop to read the data from the incoming articles
 
                 for (let i = 1; i < 4; i++) {
-                    newsDescription = newsArticles[i].description;
-                    newsTitle = newsArticles[i].title;
-                    // Updating the div with the data from the API
-                    // Updating the news description
-                    $(`#ausNews${i}`).prepend("<p>" + newsDescription + "</p>")
-                    // Updating the news title
-                    $(`#ausNews${i}`).prepend("<h3>" + newsTitle + "</h3>")
-                    // Select button the HTML
-                    articlelink = $(`.ausNews${i}`)
-                    // Adding the attr
-                    articlelink.attr("OnClick", `location.href = '${newsArticles[i].url}'`)
-                    // Updating the text
-                    articlelink.text("click here to read the full article")
+
+                    newsDescription = newsArticles[i].description
+
+                    newsTitle = $("<h3>" + newsArticles[i].title + "</h3>");
+                    newsDescription = $("<p>" + newsDescription + "</p>");
+                    newsTitle.attr("id", "title");
+                    newsDescription.attr("id", "description");
+
+                    $(`#ausNews${i}`).prepend(newsTitle)
+                    $(`#ausNews${i}`).prepend(newsDescription)
+                    
+                    articlelink = $("<a>");
+                    articlelink.attr("href", newsArticles[i].url)
+                    articlelink.attr({"class": "linkstyle"})
+                    articlelink.text("Click here to read the full article")
+                    $(`.ausNews${i}`).prepend(articlelink);
+                    
+                    
+                    
+
                 }
             },
             error: function (uvData) {
