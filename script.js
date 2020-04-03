@@ -58,8 +58,8 @@ $(document).ready(function() {
     function populateNews(response){
         console.log(response);
         for(let i = 0; i < 3; i++){
-        let title = $("<h3>").text(response.articles[i].title);
-        let desc = $("<p>").text(response.articles[i].description);
+        let title = $("<h3>").text(response.articles[i].title).attr("id","title");
+        let desc = $("<p>").text(response.articles[i].description).attr("id","description");
         let articleLink = $("<a>").text("click here to read the full article").attr({"class": "linkstyle","href": response.articles[i].url});
         
         $(`#worldNews${i}`).prepend(title, desc);
