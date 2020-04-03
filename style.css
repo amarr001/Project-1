@@ -1,9 +1,12 @@
 
 
 .linkstyle{
-
-color: teal;
+font-weight: 600;
+background-color: #10375c;
+border-radius: 10px;
+color: #ffffff;
 margin: 10px;
+padding: 5px;
 
  
 }
