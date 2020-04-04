@@ -56,9 +56,33 @@
       </div>
     </div>
       <!--Main container-->
-      <!--World news block-->
       <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
 
+      <!--State cases block-->
+        <div class="border-solid border-4 font-bold border-gray-600 p-4">
+          <h1 class="font-sans font-bold text-4xl text-gray-800 text-left pb-3">State Cases</h1>
+          <p><label for="AusStates">Choose a state:</label></p>
+          <select id="AusStates">
+            <option value="ACT">Australian Capital Territory</option>
+            <option value="QLD">Queensland</option>
+            <option value="NSW">New South Wales</option>
+            <option value="NT">Northern Territory</option>
+            <option value="VIC">Victoria</option>
+            <option value="SA">South Australia</option>
+            <option value="TAS">Tasmania</option>
+          </select>
+          <div class="grid grid-cols-6 mb-4">
+            <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-2 mx-4 rounded" id="searchState">Search</button>
+            <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-2 mx-4 rounded" id="clearState">
+              Clear
+            </button>
+          </div>
+          <div class="p-4"></div>
+            <div id="stateCases">#</div>
+          
+          </div>
+
+      <!--World news block-->
         <div class="border-solid border-4 font-bold border-gray-600 p-8" id="WorldNews">
           <h1 class="font-sans text-4xl text-gray-800 text-left ml-3 italic"><i class="fas fa-globe"></i> World News</h1>
 
@@ -87,39 +111,10 @@
               </div>
           </div>
 
-        <!--State news block-->
-          <div class="border-solid border-4 font-bold border-gray-600 p-8">
-            <h1 class="font-sans font-bold text-4xl text-gray-800 text-left pb-3"> State Search</h1>
-            <p><label for="AusStates">Choose a state:</label></p>
-            <select id="AusStates">
-              <option value="ACT">Australian Capital Territory</option>
-              <option value="QLD">Queensland</option>
-              <option value="NSW">New South Wales</option>
-              <option value="NT">Northern Territory</option>
-              <option value="VIC">Victoria</option>
-              <option value="SA">South Australia</option>
-              <option value="TAS">Tasmania</option>
-            </select>
-            <div class="grid grid-cols-6 mb-4">
-              <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-2 mx-4 rounded" id="searchState">Search</button>
-              <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-2 mx-4 rounded" id="clearState">
-                Clear
-              </button>
-            </div>
-            <div class="grid grid-rows-3">
-              <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="Statenews1">  
-                <a href="#" id="Statenews1">Link 1</a>
-              </div>
-              <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="Statenews2">
-                 <a href="#" id="Statenews2">Link 2</a>
-              </div>
-              <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="StateNews3">
-                <a href="#" id="Statenews3">Link 3</a>
-              </div>
-            </div>
-          </div>
 
-        </div>
+      </div>
+
+      </div>
 
       </div>
       </div>
