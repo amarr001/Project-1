@@ -56,12 +56,12 @@
       </div>
     </div>
       <!--Main container-->
+      <!--World news block-->
       <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
 
         <div class="border-solid border-4 font-bold border-gray-600 p-8" id="WorldNews">
-          <h1 class="font-sans text-4xl text-gray-800 text-left ml-3 italic"><i class="fas fa-globe"></i>World News</h1>
+          <h1 class="font-sans text-4xl text-gray-800 text-left ml-3 italic"><i class="fas fa-globe"></i> World News</h1>
 
-          
             <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="worldNews0">
               <button class="worldNews0"></button>
             </div>
@@ -72,11 +72,10 @@
               <button class="worldNews2"></button>
             </div>
           </div>
-        </div>
-
-        <div class="grid gap-4" id="Aussienews">
-          
-          <div class="font-sans text-4xl font-bold text-gray-800 italic"><i class="fas fa-map-marker-alt"></i>Australian News</div>
+        
+        <!--Aus news block-->
+        <div class="grid gap-4 font-bold p-8" id="Aussienews">
+            <div class="font-sans text-4xl font-bold text-gray-800 italic"><i class="fas fa-map-marker-alt"></i> Australian News</div>
             <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg" id="ausNews1">  
               <div class="ausNews1"></div>
               </div>
@@ -87,9 +86,10 @@
                 <div class="ausNews3"></div>    
               </div>
           </div>
-        
-          <div class="border-solid border-4 border-gray-600">
-            <h1 class="font-sans font-bold text-4xl text-gray-800 text-left pb-3 ml-3"> State Search</h1>
+
+        <!--State news block-->
+          <div class="border-solid border-4 font-bold border-gray-600 p-8">
+            <h1 class="font-sans font-bold text-4xl text-gray-800 text-left pb-3"> State Search</h1>
             <p><label for="AusStates">Choose a state:</label></p>
             <select id="AusStates">
               <option value="ACT">Australian Capital Territory</option>
@@ -100,28 +100,28 @@
               <option value="SA">South Australia</option>
               <option value="TAS">Tasmania</option>
             </select>
-            <div class="grid grid-cols-6">
+            <div class="grid grid-cols-6 mb-4">
               <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-2 mx-4 rounded" id="searchState">Search</button>
               <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-2 mx-4 rounded" id="clearState">
                 Clear
               </button>
             </div>
             <div class="grid grid-rows-3">
-              <div id="StatenewsOne">  
-                <a href="#" id="StatenewsOne">Link 1</a>
+              <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="Statenews1">  
+                <a href="#" id="Statenews1">Link 1</a>
               </div>
-              <div id="StatenewsTwo">
-                 <a href="#" id="StatenewsTwo">Link 2</a>
+              <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="Statenews2">
+                 <a href="#" id="Statenews2">Link 2</a>
               </div>
-              <div id="StateNewsThree">
-                <a href="#" id="StatenewsThree">Link 3</a>
+              <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="StateNews3">
+                <a href="#" id="Statenews3">Link 3</a>
               </div>
             </div>
           </div>
 
         </div>
 
-
+      </div>
       </div>
       <div id="covidDisplay"></div>
 
