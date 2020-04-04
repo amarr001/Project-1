@@ -1,5 +1,6 @@
 $(document).ready(function () {
     function getStateCoronaCount() {
+        // API key
         let rapidAPIkey = "3368eb3a0fmsh6fa4c6e2177a0d6p15bd2djsn0fd20a6e49da";
 
         createRapidApiData();
@@ -37,6 +38,7 @@ $(document).ready(function () {
                     let deaths;
 
                     allStateArr.forEach(state => {
+                        // Checking for the state info 
                         if(state.province === selectedStateVal){
                         confirmed = state.confirmed
                         recovered = state.recovered
