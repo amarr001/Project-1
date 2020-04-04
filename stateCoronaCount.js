@@ -18,17 +18,23 @@ $(document).ready(function () {
             $.ajax(settings).done((response) => {
 
                 let allStateArr = response.data.covid19Stats;
+                let $stateCases = $("#stateCases");
 
                 // Reading the input from drop down.
+
+                $("#clearState").on("click", () => {
+                    $stateCases.empty();
+                })
                 $("#searchState").on("click", () => {
+
+
+                    $stateCases.empty();
+
                     let selectedState = document.getElementById("AusStates");
                     let selectedStateVal = selectedState.options[selectedState.selectedIndex].text;
                     let confirmed;
                     let recovered;
                     let deaths;
-                    
-                    console.log(selectedStateVal)
-                    console.log(allStateArr)
 
                     allStateArr.forEach(state => {
                         if(state.province === selectedStateVal){
@@ -37,6 +43,27 @@ $(document).ready(function () {
                         deaths = state.deaths
                         }
                     });
+
+                    // Getting confirmed cases
+
+                    let $confirmed = document.createElement("P");
+                    $confirmed.setAttribute("id", "confirmed");
+                    $confirmed.innerText = `Total number of confirmed cases in ${selectedStateVal} is ${confirmed}`;
+
+                    // Getting recovered cases
+                    
+                    let $recovered = document.createElement("P");
+                    $recovered.setAttribute("id", "recovered");
+                    $recovered.innerText = `${recovered} people have recovered.`;
+
+                    let $deaths = document.createElement("P");
+                    $deaths.setAttribute("id", "deaths");
+                    $deaths.innerText = ` There have been ${deaths} deaths.`;
+
+                    $("#stateCases").append($confirmed)
+                    $("#stateCases").append($recovered)
+                    $("#stateCases").append($deaths)
+                    
 
                 })
 
