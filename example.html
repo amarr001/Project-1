@@ -39,9 +39,9 @@
 
 
       <!--Block displaying the number of cases-->
-      <div class="block bg-orange-400 px-4 py-2">
-        <span class="text-center font-sans text-base" id="numberWorldCases">World confirmed cases:</span>
-        <span class="text-right font-sans text-base mx-24" id="numberAustraliaCases">Australian confirmed cases:</span>
+      <div class="block flex flex-col bg-orange-400 px-4 py-2">
+        <div class="font-sans text-base" id="numberWorldCases">World confirmed cases:</div>
+        <div class="font-sans text-base break-all" id="numberAustraliaCases">Australian confirmed cases:</div>
       </div>
 
       <!--Main container-->
@@ -50,24 +50,27 @@
         <div class="border-solid border-4 border-gray-600" id="WorldNews">
           <p class="font-sans text-2xl text-gray-800 text-center">World News</p>
           <div id="WorldArticles">
+
+
           <a href="#" class="inline-block mx-4 my-4" id="WorldnewsOne">Link 1</a>
           <a href="#" class="inline-block mx-4 my-4" id="WorldnewsTwo">Link 2</a>
           <a href="#" class="inline-block mx-4 my-4" id="WorldnewsThree">Link 3</a>
+
           </div>
         </div>
         <div class="grid grid-cols-2 border-solid border-4 border-gray-600" id="Aussienews">
           <div class="grid grid-rows-3">
-              <p>Australian News</p>
-            <div>  
-              <a href="#" id="AusnewsOne">Link 1</a>
-            </div>
-            <div id="AusnewsTwo">
-               <a href="#" id="AusnewsTwo">Link 2</a>
-            </div>
-            <div id="AusNewsThree">
-              <a href="#" id="AusnewsThree">Link 3</a>
-            </div>
+            <p>Australian News</p>
+          <div id="ausNews1">  
+            <a href="#" class="ausNews1"></a>
           </div>
+          <div id="ausNews2">
+              <a href="#" class="ausNews2"></a>
+          </div>
+          <div id="ausNews3">
+              <a href="#" class="ausNews3"></a>
+          </div>
+        </div>
           <div>State Search
             <p><label for="AusStates">Choose a state:</label></p>
             <select id="AusStates">
@@ -93,18 +96,8 @@
           </div>
 
         </div>
-
-
-
-
-
-
-
-
       </div>
-
-
-        
+      
            
 
         <!--Footer-->
