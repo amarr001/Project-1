@@ -27,7 +27,7 @@ $(document).ready(function () {
                     $(`#ausNews${i}`).prepend(newsTitle)
                     $(`#ausNews${i}`).prepend(newsDescription)
                     
-                    articlelink = $("<a>");
+                    articlelink = $("<a target='_blank'>");
                     articlelink.attr("href", newsArticles[i].url)
                     articlelink.attr({"class": "linkstyle"})
                     articlelink.text("Click here to read the full article")

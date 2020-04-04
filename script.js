@@ -43,8 +43,7 @@ $(document).ready(function() {
 
     };
 
-
-    // getting the top news from google news for australia
+        // getting the top news from google news for australia
     getWorldNews()
 
     function getWorldNews(){
@@ -60,7 +59,7 @@ $(document).ready(function() {
         for(let i = 0; i < 3; i++){
         let title = $("<h3>").text(response.articles[i].title).attr("id","title");
         let desc = $("<p>").text(response.articles[i].description).attr("id","description");
-        let articleLink = $("<a>").text("click here to read the full article").attr({"class": "linkstyle","href": response.articles[i].url});
+        let articleLink = $("<a target='_blank'>").text("click here to read the full article").attr({"class": "linkstyle","href": response.articles[i].url});
         
         $(`#worldNews${i}`).prepend(title, desc);
         $(`.worldNews${i}`).prepend(articleLink);
