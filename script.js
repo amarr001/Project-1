@@ -23,13 +23,13 @@ $(document).ready(function() {
 
     // display the data inside the html
     function getCovidData(response){
-        console.log(response);
+        //console.log(response);
         let statsAustralia = response.data.covid19Stats;
         $("#AusStates").change(function(){
             var stateText = $("#AusStates option:selected").text();
-            console.log(stateText);
+            //console.log(stateText);
             let stateIndex = statsAustralia.findIndex( area => area.province === stateText)
-            console.log(stateIndex);
+            //console.log(stateIndex);
             //console.log(data);   
             let state = $("<p>").text("State: " + JSON.stringify(statsAustralia[stateIndex].province));
             //console.log(state);
@@ -45,11 +45,11 @@ $(document).ready(function() {
 
 
     // getting the top news from google news for australia
-    //getTopNewsAU();
+    getWorldNews()
 
-    function getTopNewsAU(){
+    function getWorldNews(){
         $.ajax({
-            url: "https://newsapi.org/v2/top-headlines?country=au&apiKey="+googleAPIkey,
+            url: "https://newsapi.org/v2/everything?q=corona%20or%20covid&language=en&sortedBy=popularity&apiKey="+googleAPIkey,
             method: "GET"})
             .then(populateNews)
             .fail(errormsg);
@@ -57,9 +57,17 @@ $(document).ready(function() {
     
     function populateNews(response){
         console.log(response);
+        for(let i = 0; i < 3; i++){
+        let title = $("<h3>").text(response.articles[i].title).attr("id","title");
+        let desc = $("<p>").text(response.articles[i].description).attr("id","description");
+        let articleLink = $("<a>").text("click here to read the full article").attr({"class": "linkstyle","href": response.articles[i].url});
+        
+        $(`#worldNews${i}`).prepend(title, desc);
+        $(`.worldNews${i}`).prepend(articleLink);
+
+        }
     }
-    
-    
+       
     //error message that is going to be shown.
     function errormsg(){
         console.log("Unable to get any data");
