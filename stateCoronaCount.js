@@ -1,8 +1,10 @@
 $(document).ready(function () {
     function getStateCoronaCount() {
         let rapidAPIkey = "3368eb3a0fmsh6fa4c6e2177a0d6p15bd2djsn0fd20a6e49da";
+
         createRapidApiData();
-        function createRapidApiData(){
+
+        function createRapidApiData() {
             var settings = {
                 "async": true,
                 "crossDomain": true,
@@ -16,15 +18,32 @@ $(document).ready(function () {
             $.ajax(settings).done((response) => {
 
                 let allStateArr = response.data.covid19Stats;
-                let selectedState = document.getElementById("AusStates");
-                let selectedStateVal = selectedState.options[selectedState.selectedIndex].value;
 
-                console.log(selectedStateVal)
+                // Reading the input from drop down.
+                $("#searchState").on("click", () => {
+                    let selectedState = document.getElementById("AusStates");
+                    let selectedStateVal = selectedState.options[selectedState.selectedIndex].text;
+                    let confirmed;
+                    let recovered;
+                    let deaths;
+                    
+                    console.log(selectedStateVal)
+                    console.log(allStateArr)
+
+                    allStateArr.forEach(state => {
+                        if(state.province === selectedStateVal){
+                        confirmed = state.confirmed
+                        recovered = state.recovered
+                        deaths = state.deaths
+                        }
+                    });
+
+                })
 
             }).fail((errormsg) => {
                 console.log(errormsg)
             });
-            };
+        };
     }
     // Running the function
     getStateCoronaCount();
