@@ -23,3 +23,10 @@ padding: 5px;
   margin: 10px;
   color: #10375c;
 }
+
+/* style dropdown*/
+
+#AusStates {
+  margin: 10px;
+  border: 1px solid #CCC;
+}
