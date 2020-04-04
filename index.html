@@ -9,6 +9,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
    
+    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+    <script src="https://kit.fontawesome.com/690c0f0a79.js" crossorigin="anonymous"></script>
+
     <title>QIG</title>
 </head>
 
@@ -19,7 +22,7 @@
 
     <nav class="block bg-yellow-500 border rounded-br-lg">
       <div class="m-2 text-white">
-        <span class="sm:flex-wrap md:flex-wrap font-semibold text-3xl">QIG - Quarantine and Isolation Guide</span>
+        <span class="sm:flex-wrap md:flex-wrap font-semibold text-3xl"><i class="fas fa-house-user"></i>  QIG - Quarantine and Isolation Guide</span>
       
         <div class="mx-2 text-base font-semibold flex sm:flex-wrap md:flex-wrap items-center justify-end">
           <a href="index.html" class="mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
@@ -55,16 +58,16 @@
       <!--Main container-->
       <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
 
-       <div class="border-solid border-4 font-bold border-gray-600" id="WorldNews">
-          <h1 class="font-sans text-4xl text-gray-800 text-left ml-3">World News</h1>
+        <div class="border-solid border-4 font-bold border-gray-600 p-8" id="WorldNews">
+          <h1 class="font-sans text-4xl text-gray-800 text-left ml-3 italic"> <i class="fas fa-globe"></i> World News</h1>
          
-         <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg m-3" id="worldNews0">
+         <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="worldNews0">
             <button class="worldNews0"></button>
           </div>
-          <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg m-3" id="worldNews1">
+          <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="worldNews1">
             <button class="worldNews1"></button>
           </div>
-          <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg m-3" id="worldNews2">
+          <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="worldNews2">
             <button class="worldNews2"></button>
     
 
@@ -73,7 +76,7 @@
 
         <div class="grid gap-4" id="Aussienews">
           
-          <div class="font-sans text-4xl font-bold text-gray-800 italic">Australian News</div>
+          <div class="font-sans text-4xl font-bold text-gray-800 italic"> <i class="fas fa-map-marker-alt"></i> Australian News</div>
             <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg" id="ausNews1">  
               <div class="ausNews1"></div>
               </div>
@@ -86,7 +89,7 @@
           </div>
         
           <div class="border-solid border-4 border-gray-600">
-            <h1 class="font-sans font-bold text-4xl text-gray-800 text-left ml-3"> State Search</h1>
+            <h1 class="font-sans font-bold text-4xl text-gray-800 text-left pb-3 ml-3"> State Search</h1>
             <p><label for="AusStates">Choose a state:</label></p>
             <select id="AusStates">
               <option value="ACT">Australian Capital Territory</option>
@@ -97,13 +100,12 @@
               <option value="SA">South Australia</option>
               <option value="TAS">Tasmania</option>
             </select>
-
-            <div class="grid grid-cols-2">
-              <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-6 rounded" id="searchState">
+            <div class="grid grid-cols-6">
+              <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-2 mx-4 rounded" id="searchState">Search</button>
+              <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-2 mx-4 rounded" id="clearState">
                 Clear
               </button>
             </div>
-
             <div class="grid grid-rows-3">
               <div id="StatenewsOne">  
                 <a href="#" id="StatenewsOne">Link 1</a>
