@@ -18,49 +18,49 @@
 
 <body>
 
-  <!--Header-->
+<!-- NAVBAR COMPONENT -->
+<nav class="flex items-center justify-between flex-wrap bg-yellow-500 p-6">
+  <div class="flex items-center flex-shrink-0 text-gray-800 mr-6">
+    <span class="font-bold text-2xl"><i class="fas fa-house-user"></i>  QIG - Quarantine and Isolation Guide</span>
+  </div>
 
-  <nav class="block bg-yellow-500 border rounded-br-lg">
-    <div class="m-2 text-white">
-      <span class="sm:flex-wrap md:flex-wrap font-semibold text-3xl"><i class="fas fa-house-user"></i> QIG - Quarantine
-        and Isolation Guide</span>
-
-      <div class="mx-2 text-base font-semibold flex sm:flex-wrap md:flex-wrap items-center justify-end">
-        <a href="index.html" class="mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-          Home
-        </a>
-        <a href="guide.html" class="mt-4  lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-          Quarantine Guide
-        </a>
-        <a href="recipe.html" class="mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white">
-          Healthy Iso Recipes
-        </a>
-      </div>
+  <div class="w-full block flex-grow sm:flex sm:items-center sm:w-auto">
+    <div class="text-2x1 font-bold sm:flex-grow">
+      <a href="index.html"
+        class="block mt-4 sm:inline-block sm:mt-0 text-teal-800 hover:text-white mr-4"
+      >Home</a>
+      <a href="guide.html"
+        class="block mt-4 sm:inline-block sm:mt-0 text-teal-800 hover:text-white mr-4">Quarantine Guide</a>
+      <a href="recipe.html"
+        class="block mt-4 sm:inline-block sm:mt-0 text-teal-800 hover:text-white">Healthy Iso Recipe</a>
     </div>
-  </nav>
+  </div>
+</nav>
   <!--w-full block flex-grow lg:flex lg:items-center lg:w-auto"-->
 
   <!--Main-->
 
-
+<main>
   <!--Block displaying the number of cases-->
-  <div class="container mx-auto table w-flex border-dashed border-4 rounded-br-lg border-blue-800 m-4 item-stretch">
-    <div class="table-row-group font-sans text-4x1 text-red-600 font-bold">
-      <div class="table-row">
-        <span class="table-cell px-4 py-1" id="numberWorldCases">World confirmed cases:</span>
-        <span class="table-cell px-4 py-1" id="numberWorldRecovCases">World recovered cases:</span>
-      </div>
-      <div class="table-row">
-        <span class="table-cell px-4 py-1" id="numberAusCases">Australian confirmed cases:</span>
-        <span class="table-cell px-4 py-1" id="numberAusRecovCases">Australian recovered cases:</span>
-      </div>
+  <div
+    class="container mx-auto w-full bg-yellow-100 border-dashed border-4 border-red-700 item-justified px-4 py-3 rounded relative my-5">
+    <div class="flex mb-4">
+      <div class="w-full item-justified text-center text-red-800 text-3xl font-bold">Current Covid-19 Statistics</div>
     </div>
+    <div class="text-red-700 font-bold">
+    <div class="flex mb-4">
+      <span class="w-1/2" id="numberWorldCases"></span>
+      <span class="w-1/2" id="numberWorldRecovCases"></span>
+    </div>
+    <div class="flex mb-4">
+        <span class="w-1/2" id="numberAusCases"></span>
+        <span class="w-1/2" id="numberAusRecovCases"></span>
+    </div>
+  </div>    
   </div>
+
   <!--Main container-->
-  <!--World news block-->
   <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
-
-
 
     <!--State cases block-->
     <div class="border-solid border-4 font-bold border-gray-600 p-4">
@@ -77,16 +77,16 @@
         <option value="WA">Western Australia</option>
       </select>
 
-      <div class="p-4"></div>
-      <div id="stateCases"></div>
-    </div>
-
+    <div class="p-4 text-teal-800" id="stateCases"></div>
+ 
     <div class="grid grid-cols-6 mb-4">
-      <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-2 mx-4 rounded"
+      <button class="bg-teal-700 hover:bg-teal-600 text-white font-bold py-2 px-2 mx-4 rounded"
         id="searchState">Search</button>
-      <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-2 mx-4 rounded" id="clearState">
+      <button class="bg-teal-700 hover:bg-teal-600 text-white font-bold py-2 px-2 mx-4 rounded" id="clearState">
         Clear
       </button>
+
+    </div>
     </div>
 
 
@@ -94,19 +94,19 @@
     <div class="border-solid border-4 font-bold border-gray-600 p-8" id="WorldNews">
       <h1 class="font-sans text-4xl text-gray-800 text-left ml-3 italic"><i class="fas fa-globe"></i> World News</h1>
 
-      <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="worldNews0">
+      <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-4" id="worldNews0">
         <button class="worldNews0"></button>
       </div>
-      <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="worldNews1">
+      <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-4" id="worldNews1">
         <button class="worldNews1"></button>
       </div>
-      <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="worldNews2">
+      <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-4" id="worldNews2">
         <button class="worldNews2"></button>
       </div>
     </div>
 
     <!--Aus news block-->
-    <div class="grid gap-4 font-bold p-8" id="Aussienews">
+    <div class="grid gap-4 border-solid border-4 font-bold border-gray-600 p-8" id="Aussienews">
       <div class="font-sans text-4xl font-bold text-gray-800 italic"><i class="fas fa-map-marker-alt"></i> Australian
         News</div>
 
@@ -121,9 +121,6 @@
       </div>
     </div>
 
-
-
-
   </div>
 
   </div>
@@ -133,7 +130,7 @@
   </div>
   <div id="covidDisplay"></div>
 
-
+</main>
   <!--Footer-->
 
 
