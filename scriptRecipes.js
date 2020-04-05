@@ -20,13 +20,13 @@ function pullRecipes () {
                 
             $('<li>' +
             
-            '<div class="max-w-sm w-full lg:max-w-full lg:flex">' +
+            '<div class=" max-w-sm w-full lg:max-w-full flex">' +
             
             '<div class=" flex items-center lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">' +
-            '<img class="w-40 h-50 rounded mr-4" src="'+JSON.parse(response).results[i].thumbnail+'" alt="'+JSON.parse(response).results[i].title+'"></img>' + 
-            '</div>'  +
+            '<img class="w-40 h-60 rounded mr-4" src="'+JSON.parse(response).results[i].thumbnail+'" alt="'+JSON.parse(response).results[i].title+'"></img>' + 
+            '</div>' +
 
-            '<div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">' +
+            '<div class="w-4/5 border-b border-gray-400 p-4 justify-between leading-normal">' +
             
             
             '<div class="text-gray-900 font-bold text-xl mb-2">'+JSON.parse(response).results[i].title+'</div>' +
@@ -36,6 +36,7 @@ function pullRecipes () {
             '<a target="blank" class="linkstyle" href="'+JSON.parse(response).results[i].href+'">Cook Me</a></span>'+
             
            '</div>' +
+
 
            '</div>' +
             
