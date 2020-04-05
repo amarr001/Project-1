@@ -4,25 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>QIG</title>
+    <script src="https://kit.fontawesome.com/690c0f0a79.js" crossorigin="anonymous"></script>
+    <title>QIG - Recipes</title>
 </head>
 
 <body>
     <!--Header-->
     <nav class="block bg-yellow-500 border rounded-br-lg">
         <div class="m-2 text-white">
-          <span class="sm:flex-wrap md:flex-wrap font-semibold text-3xl">QIG - Quarantine and Isolation Guide</span>
+          <span class="sm:flex-wrap md:flex-wrap font-semibold text-3xl"><i class="fas fa-house-user"></i> QIG - Quarantine and Isolation Guide</span>
         
           <div class="mx-2 text-base font-semibold flex sm:flex-wrap md:flex-wrap items-center justify-end">
-            <a href="index.html" class="mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+            <a href="index.html" class="mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
                 Home
               </a>
-              <a href="guide.html" class="mt-4  lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+              <a href="guide.html" class="mt-4  lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
                 Quarantine Guide 
               </a>
-              <a href="recipe.html" class="mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white">
+              <a href="recipe.html" class="mt-4 lg:inline-block lg:mt-0 text-white hover:text-white">
                 Healthy Iso Recipes
               </a>
          </div> 
@@ -40,6 +42,33 @@
             </div>
         </div>
     </main>
+
+
+    <!--<li>
+
+      <div class="max-w-sm w-full lg:max-w-full lg:flex">
+      <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
+      <img src="'+JSON.parse(response).results[i].thumbnail+'" alt="'+JSON.parse(response).results[i].title+'"></img>
+      </div>
+      <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+      <div class="mb-8">
+      <div class="text-gray-900 font-bold text-xl mb-2">'+JSON.parse(response).results[i].title+'</div>
+            <p class="text-gray-700 text-base">Ingredients: '+JSON.parse(response).results[i].ingredients+'</p>
+      
+          <div class="px-6 py-4"><span class="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+          <a target="blank" class="linkstyle" href="'+JSON.parse(response).results[i].href+'">Cook Me</a></span>
+      
+        </div> 
+          
+          </div>
+          </div>
+          
+          </li>-->
+
+
+
+
+
 
 
     <!--Javascript-->
