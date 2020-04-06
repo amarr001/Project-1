@@ -2,138 +2,142 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
-   
-    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
-    <script src="https://kit.fontawesome.com/690c0f0a79.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
 
-    <title>QIG</title>
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <script src="https://kit.fontawesome.com/690c0f0a79.js" crossorigin="anonymous"></script>
+
+  <title>QIG</title>
 </head>
 
 
 <body>
 
-    <!--Header-->
+  <!-- NAVBAR COMPONENT -->
+  <nav class="flex items-center justify-between flex-wrap bg-yellow-500 p-6">
+    <div class="flex items-center flex-shrink-0 text-gray-800 mr-6">
+      <span class="font-bold text-2xl pageTitle"><i class="fas fa-house-user"></i>  QIG - Quarantine and Isolation Guide</span>
+    </div>
 
-    <nav class="block bg-yellow-500 border rounded-br-lg">
-      <div class="m-2 text-white">
-        <span class="sm:flex-wrap md:flex-wrap font-semibold text-3xl"><i class="fas fa-house-user"></i>  QIG - Quarantine and Isolation Guide</span>
-      
-        <div class="mx-2 text-base font-semibold flex sm:flex-wrap md:flex-wrap items-center justify-end">
-          <a href="index.html" class="mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-            Home
-          </a>
-          <a href="guide.html" class="mt-4  lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-            Quarantine Guide 
-          </a>
-          <a href="recipe.html" class="mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white">
-            Healthy Iso Recipes
-          </a>
-       </div> 
-      </div>
-    </nav>
-<!--w-full block flex-grow lg:flex lg:items-center lg:w-auto"-->
-
-        <!--Main-->
-
-
-      <!--Block displaying the number of cases-->
-      <div class="container mx-auto table w-flex border-dashed border-4 rounded-br-lg border-blue-800 m-4 item-stretch">
-        <div class="table-row-group font-sans text-4x1 text-red-600 font-bold">
-          <div class="table-row">
-            <span class="table-cell px-4 py-1" id="numberWorldCases">World confirmed cases:</span>
-            <span class="table-cell px-4 py-1" id="numberWorldRecovCases">World recovered cases:</span>
-          </div>
-          <div class="table-row">
-            <span class="table-cell px-4 py-1" id="numberAusCases">Australian confirmed cases:</span>
-            <span class="table-cell px-4 py-1" id="numberAusRecovCases">Australian recovered cases:</span>
-          </div>
+    <div class="w-full block flex-grow sm:flex sm:items-center sm:w-auto">
+      <div class="text-2x1 font-bold sm:flex-grow">
+        <a href="index.html"
+          class="block mt-4 sm:inline-block sm:mt-0 text-teal-800 hover:text-white mr-4"
+        >Home</a>
+        <a href="guide.html"
+          class="block mt-4 sm:inline-block sm:mt-0 text-teal-800 hover:text-white mr-4">Quarantine Guide</a>
+        <a href="recipe.html"
+          class="block mt-4 sm:inline-block sm:mt-0 text-teal-800 hover:text-white">Healthy Iso Recipes</a>
       </div>
     </div>
-      <!--Main container-->
-      <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
+  </nav>
 
-      <!--State cases block-->
-        <div class="border-solid border-4 font-bold border-gray-600 p-4">
-          <h1 class="font-sans font-bold text-4xl text-gray-800 text-left pb-3">State Cases</h1>
-          <p><label for="AusStates">Choose a state:</label></p>
-          <select id="AusStates">
-            <option value="ACT">Australian Capital Territory</option>
-            <option value="QLD">Queensland</option>
-            <option value="NSW">New South Wales</option>
-            <option value="NT">Northern Territory</option>
-            <option value="VIC">Victoria</option>
-            <option value="SA">South Australia</option>
-            <option value="TAS">Tasmania</option>
-            <option value="WA">Western Australia</option>
-          </select>
+<!--Main container-->
+<main>
 
-          <div class="p-4"></div>
-            <div id="stateCases"></div>
-          </div>
-          
-          <div class="grid grid-cols-6 mb-4">
-            <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-2 mx-4 rounded" id="searchState">Search</button>
-            <button class="bg-teal-700 hover:bg-red-700 text-white font-bold py-2 px-2 mx-4 rounded" id="clearState">
-              Clear
-            </button>
-          </div>
-          
+  <!--Block displaying the number of cases-->
+  <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
+  <div
+    class="container mx-auto w-full bg-yellow-100 border-dashed border-4 border-red-700 item-justified px-4 py-3 rounded relative my-3">
+    <div class="flex mb-4">
+      <div class="w-full item-justified text-center text-red-800 text-3xl font-bold">Current Covid-19 Statistics</div>
+    </div>
+    <div class="text-red-700 font-bold">
+    <div class="flex mb-4">
+      <span class="w-1/2" id="numberWorldCases"></span>
+      <span class="w-1/2" id="numberWorldRecovCases"></span>
+    </div>
+    <div class="flex mb-4">
+        <span class="w-1/2" id="numberAusCases"></span>
+        <span class="w-1/2" id="numberAusRecovCases"></span>
+    </div>
+  </div>    
+  </div>
 
-      <!--World news block-->
-        <div class="border-solid border-4 font-bold border-gray-600 p-8" id="WorldNews">
-          <h1 class="font-sans text-4xl text-gray-800 text-left ml-3 italic"><i class="fas fa-globe"></i> World News</h1>
+    <!--State cases block-->
+    <div class="border-solid border-4 font-bold border-gray-600 p-4 my-3">
+      <h1 class="font-sans font-bold text-4xl text-gray-800 text-left pb-3">State Cases</h1>
+      <p><label for="AusStates">Choose a state:</label></p>
+      <select id="AusStates">
+        <option value="ACT">Australian Capital Territory</option>
+        <option value="QLD">Queensland</option>
+        <option value="NSW">New South Wales</option>
+        <option value="NT">Northern Territory</option>
+        <option value="VIC">Victoria</option>
+        <option value="SA">South Australia</option>
+        <option value="TAS">Tasmania</option>
+        <option value="WA">Western Australia</option>
+      </select>
 
-            <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="worldNews0">
-              <button class="worldNews0"></button>
-            </div>
-            <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="worldNews1">
-              <button class="worldNews1"></button>
-            </div>
-            <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-3" id="worldNews2">
-              <button class="worldNews2"></button>
-            </div>
-          </div>
-        
-        <!--Aus news block-->
-        <div class="grid gap-4 font-bold p-8" id="Aussienews">
-            <div class="font-sans text-4xl font-bold text-gray-800 italic"><i class="fas fa-map-marker-alt"></i> Australian News</div>
-            <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg" id="ausNews1">  
-              <div class="ausNews1"></div>
-              </div>
-            <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg" id="ausNews2">
-                <div class="ausNews2"></div>
-                </div>
-            <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg" id="ausNews3">
-                <div class="ausNews3"></div>    
-              </div>
-          </div>
+    <div class="p-4 text-teal-800" id="stateCases"></div>
+ 
+    <div class="grid grid-cols-6 mb-4">
+      <button class="bg-teal-700 hover:bg-teal-600 text-white font-bold py-2 ml-1 px-2 rounded"
+        id="searchState">Search</button>
+      <button class="bg-teal-700 hover:bg-teal-600 text-white font-bold py-2 ml-1 px-2 rounded" id="clearState">
+        Clear
+      </button>
+
+    </div>
+    </div>
 
 
+    <!--World news block-->
+    <div class="border-solid border-4 font-bold border-gray-600 p-8 my-3" id="WorldNews">
+      <h1 class="font-sans text-4xl text-gray-800 text-left ml-3 italic"><i class="fas fa-globe"></i> World News</h1>
+
+      <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-4" id="worldNews0">
+        <button class="worldNews0"></button>
       </div>
-
+      <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-4" id="worldNews1">
+        <button class="worldNews1"></button>
       </div>
-
+      <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg pb-4" id="worldNews2">
+        <button class="worldNews2"></button>
       </div>
+    </div>
+
+    <!--Aus news block-->
+    <div class="grid gap-4 border-solid border-4 font-bold border-gray-600 p-8 my-3" id="Aussienews">
+      <h1 class="font-sans text-4xl text-gray-800 text-left ml-3 italic"><i class="fas fa-map-marker-alt"></i> Australian
+        News</h1>
+
+      <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg" id="ausNews1">
+        <div class="ausNews1"></div>
       </div>
-      <div id="covidDisplay"></div>
+      <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg" id="ausNews2">
+        <div class="ausNews2"></div>
+      </div>
+      <div class="border-solid border-l-8 border-yellow-500 rounded-t-lg rounded-b-lg" id="ausNews3">
+        <div class="ausNews3"></div>
+      </div>
+    </div>
+
+  </div>
 
 
-        <!--Footer-->
-        
-        
+  <div id="covidDisplay"></div>
 
-    <!--Javascript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="newsArticlesAus.js"></script>
-    <script src="script.js"></script>
-    <script src="stateCoronaCount.js"></script>
-   
+</main>
+
+<!--Footer-->
+  <div class="w-full items-justified flex-wrap bg-yellow-500 p-6">
+    <p class="text-sm text-center font-bold text-teal-800"><i class="fas fa-house-user"></i> QIG - Quarantine and Isolation Guide</p>
+    <p class="text-sm text-center font-bold text-teal-800 py-2">Made with <i class="fa fa-heart text-red-800"></i> by the callback-cats</p>
+  </div>
+
+
+  <!--Javascript-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="newsArticlesAus.js"></script>
+  <script src="script.js"></script>
+  <script src="stateCoronaCount.js"></script>
+
 </body>
 
 </html>

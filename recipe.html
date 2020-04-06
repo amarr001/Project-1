@@ -4,43 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>QIG</title>
+    <script src="https://kit.fontawesome.com/690c0f0a79.js" crossorigin="anonymous"></script>
+    <title>QIG - Recipes</title>
 </head>
 
 <body>
-    <!--Header-->
-    <nav class="block bg-yellow-500 border rounded-br-lg">
-        <div class="m-2 text-white">
-          <span class="sm:flex-wrap md:flex-wrap font-semibold text-3xl">QIG - Quarantine and Isolation Guide</span>
-        
-          <div class="mx-2 text-base font-semibold flex sm:flex-wrap md:flex-wrap items-center justify-end">
-            <a href="index.html" class="mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-                Home
-              </a>
-              <a href="guide.html" class="mt-4  lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-                Quarantine Guide 
-              </a>
-              <a href="recipe.html" class="mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white">
-                Healthy Iso Recipes
-              </a>
-         </div> 
-        </div>
-      </nav>
+  <!-- NAVBAR COMPONENT -->
+  <nav class="flex items-center justify-between flex-wrap bg-yellow-500 p-6">
+    <div class="flex items-center flex-shrink-0 text-gray-800 mr-6">
+      <span class="font-bold text-2xl pageTitle"><i class="fas fa-house-user"></i>  QIG - Quarantine and Isolation Guide</span>
+    </div>
 
+    <div class="w-full block flex-grow sm:flex sm:items-center sm:w-auto">
+      <div class="text-2x1 font-bold sm:flex-grow">
+        <a href="index.html"
+          class="block mt-4 sm:inline-block sm:mt-0 text-teal-800 hover:text-white mr-4"
+        >Home</a>
+        <a href="guide.html"
+          class="block mt-4 sm:inline-block sm:mt-0 text-teal-800 hover:text-white mr-4">Quarantine Guide</a>
+        <a href="recipe.html"
+          class="block mt-4 sm:inline-block sm:mt-0 text-teal-800 hover:text-white">Healthy Iso Recipes</a>
+      </div>
+    </div>
+  </nav>
+
+  <!--Main container-->
+  
     <main>
+    <div class="container mx-auto mt-3 grid grid-cols-1 gap-3">
         <div
             class="overflow-hidden p-4 p-10 flex justify-center">
             <div  class=" ">
-                <div class="font-sans text-4xl font-bold text-gray-800 italic">Healthy Isolation Recipes</div>
+                <div class="font-sans text-4xl font-bold text-gray-800 italic text-center py-5">Healthy Isolation Recipes</div>
                 <ul id="recipeContainer">
 
                 </ul>
             </div>
         </div>
+    </div>
     </main>
+  
 
+    <!--<li>
+
+      <div class="max-w-sm w-full lg:max-w-full lg:flex">
+      <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
+      <img src="'+JSON.parse(response).results[i].thumbnail+'" alt="'+JSON.parse(response).results[i].title+'"></img>
+      </div>
+      <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+      <div class="mb-8">
+      <div class="text-gray-900 font-bold text-xl mb-2">'+JSON.parse(response).results[i].title+'</div>
+            <p class="text-gray-700 text-base">Ingredients: '+JSON.parse(response).results[i].ingredients+'</p>
+      
+          <div class="px-6 py-4"><span class="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+          <a target="blank" class="linkstyle" href="'+JSON.parse(response).results[i].href+'">Cook Me</a></span>
+      
+        </div> 
+          
+          </div>
+          </div>
+          
+          </li>-->
+
+
+
+<!--Footer-->
+  <div class="w-full items-justified flex-wrap bg-yellow-500 p-6">
+    <p class="text-sm text-center font-bold text-teal-800"><i class="fas fa-house-user"></i> QIG - Quarantine and Isolation Guide</p>
+    <p class="text-sm text-center font-bold text-teal-800 py-2">Made with <i class="fa fa-heart text-red-800"></i> by the callback-cats</p>
+  </div>
 
     <!--Javascript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

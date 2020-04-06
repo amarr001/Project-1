@@ -24,8 +24,7 @@ $(document).ready(function () {
                     newsTitle.attr("id", "title");
                     newsDescription.attr("id", "description");
 
-                    $(`#ausNews${i}`).prepend(newsTitle)
-                    $(`#ausNews${i}`).prepend(newsDescription)
+                    $(`#ausNews${i}`).prepend(newsTitle, newsDescription)
                     
                     articlelink = $("<a>");
                     articlelink.attr({
