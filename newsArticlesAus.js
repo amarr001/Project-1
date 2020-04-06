@@ -28,14 +28,13 @@ $(document).ready(function () {
                     $(`#ausNews${i}`).prepend(newsDescription)
                     
                     articlelink = $("<a>");
-                    articlelink.attr("href", newsArticles[i].url)
-                    articlelink.attr({"class": "linkstyle"})
+                    articlelink.attr({
+                        "href" : newsArticles[i].url,
+                        "class": "linkstyle",
+                        "target": "_blank"
+                    })
                     articlelink.text("Click here to read the full article")
                     $(`.ausNews${i}`).prepend(articlelink);
-                    
-                    
-                    
-
                 }
             },
             error: function (uvData) {
