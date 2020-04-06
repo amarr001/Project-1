@@ -15,7 +15,9 @@ Upon loading of the web application it will retrieve various statistics on the c
 ![An image of the QIG Recipe page desktop.](./Recipedes.PNG)
 
 ### Mobile Screenshots
-![An image of the QIG on mobile.](./.png)
+![An image of the QIG Home page on mobile.](./Homemob.PNG)
+![An image of the QIG Guide page on mobile.](./Guidemob.PNG)
+![An image of the QIG Recpie pageon mobile.](./Recipemob.PNG)
 
 ## Credits
 HTML & CSS by Ana Marr & Ziyen Loh
