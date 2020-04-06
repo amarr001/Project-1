@@ -21,7 +21,8 @@ $(document).ready(function () {
             let desc = $("<p>").text(response.articles[i].description).attr("id", "description");
             let articleLink = $("<a target='_blank'>").text("click here to read the full article").attr({
                 "class": "linkstyle",
-                "href": response.articles[i].url
+                "href": response.articles[i].url,
+                "target": "_blank"
             });
 
             $(`#worldNews${i}`).prepend(title, desc);
