@@ -1,27 +1,9 @@
 $(document).ready(function () {
     var googleAPIkey = "18c881248ae94a0eb9c6e2320f2ab227";
-    var rapidAPIkey = "3368eb3a0fmsh6fa4c6e2177a0d6p15bd2djsn0fd20a6e49da";
 
-    createRapidApiData();
     getWorldConfirmedCases();
     getAusConfirmedCases();
-
-    //getting data from RapidApi
-    function createRapidApiData() {
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Australia",
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-                "x-rapidapi-key": rapidAPIkey
-            }
-        }
-    };
-
-    // getting the top news from google news for australia
-    getWorldNews()
+    getWorldNews();
 
     function getWorldNews() {
         $.ajax({
@@ -33,7 +15,7 @@ $(document).ready(function () {
     }
 
     function populateNews(response) {
-        console.log(response);
+
         for (let i = 0; i < 3; i++) {
             let title = $("<h3>").text(response.articles[i].title).attr("id", "title");
             let desc = $("<p>").text(response.articles[i].description).attr("id", "description");
@@ -78,7 +60,6 @@ $(document).ready(function () {
     }
 
     function getWorldTotal(response) {
-        //console.log(response);
         let confirmedCases = response.data[0].confirmed;
         let recoveredCases = response.data[0].recovered;
         $("#numberWorldCases").text("World confirmed cases: " + confirmedCases);
