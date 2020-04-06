@@ -1,19 +1,23 @@
 # Quarantine & Isolation Guide
 
 ## Overview
-A web application designed to help people stay abreast of current news relating to the Coronavirus outbreak. It features world news and Australian news with the option of adding state based content also.
+A web application designed to help people stay abreast of current news relating to the Coronavirus outbreak. It features world news and Australian news with the option of adding state based statistics also.
 
 ## Usage
-Upon loading of the web application it will retrieve various statistics on the coronavirus and display at the top of the page. Beneath this it will dynamically create news articles seperated by categories with links back to the host sites. There is a drop down menu that allows users to specify which state they'd like to see specific news for.
+Upon loading of the web application it will retrieve various statistics on the coronavirus and display at the top of the page. Beneath this it will dynamically create news articles seperated by categories with links back to the host sites. There is a drop down menu that allows users to specify which state they'd like to see specific statistics for.
 
 ## Link to Deployed Application
 [View here](https:///)
 
-### Desktop Screenshot
-![An image of the QIG on desktop.](./.png)
+### Desktop Screenshots
+![An image of the QIG Home page on desktop.](./Homedes.PNG)
+![An image of the QIG Guide page on desktop.](./Guidedes.PNG)
+![An image of the QIG Recipe page desktop.](./Recipedes.PNG)
 
-### Mobile Screenshot
-![An image of the QIG on mobile.](./.png)
+### Mobile Screenshots
+![An image of the QIG Home page on mobile.](./Homemob.PNG)
+![An image of the QIG Guide page on mobile.](./Guidemob.PNG)
+![An image of the QIG Recpie pageon mobile.](./Recipemob.PNG)
 
 ## Credits
 HTML & CSS by Ana Marr & Ziyen Loh
