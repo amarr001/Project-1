@@ -2,7 +2,7 @@ $(document).ready(function () {
     function getAusArticles() {
         $.ajax({
             // URL of the API
-            url: "http://newsapi.org/v2/top-headlines?country=au&category=health&apiKey=0e7b5f109619407cb1b122a24f82e1dc",
+            url: "https://newsapi.org/v2/top-headlines?country=au&category=health&apiKey=0e7b5f109619407cb1b122a24f82e1dc",
             method: "GET",
             success: function (incomingData) {
 
