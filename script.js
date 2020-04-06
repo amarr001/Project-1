@@ -66,8 +66,4 @@ $(document).ready(function () {
         $("#numberWorldRecovCases").text("World recovered cases: " + recoveredCases);
     }
 
-    $("#searchState").on("click", function (event) {
-        event.preventDefault();
-        $("#covidDisplay").empty();
-    })
 });
