@@ -7,7 +7,7 @@ A web application designed to help people stay abreast of current news relating 
 Upon loading of the web application it will retrieve various statistics on the coronavirus and display at the top of the page. Beneath this it will dynamically create news articles seperated by categories with links back to the host sites. There is a drop down menu that allows users to specify which state they'd like to see specific statistics for.
 
 ## Link to Deployed Application
-[View here](https:///)
+[View here](https://amarr001.github.io/Project-1/)
 
 ### Desktop Screenshots
 ![An image of the QIG Home page on desktop.](./Homedes.PNG)
