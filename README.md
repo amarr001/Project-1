@@ -9,10 +9,12 @@ Upon loading of the web application it will retrieve various statistics on the c
 ## Link to Deployed Application
 [View here](https:///)
 
-### Desktop Screenshot
-![An image of the QIG on desktop.](./.png)
+### Desktop Screenshots
+![An image of the QIG on desktop.](./Homedes.png)
+![An image of the QIG on desktop.](./Guidedes.png)
+![An image of the QIG on desktop.](./Recipedes.png)
 
-### Mobile Screenshot
+### Mobile Screenshots
 ![An image of the QIG on mobile.](./.png)
 
 ## Credits
