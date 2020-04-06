@@ -18,30 +18,30 @@ $(document).ready(function() {
                 "x-rapidapi-key": rapidAPIkey
             }
         }
-        $.ajax(settings).done(getCovidData).fail(errormsg);
+        // $.ajax(settings).done(getCovidData).fail(errormsg);
         };
 
-    // display the data inside the html
-    function getCovidData(response){
-        //console.log(response);
-        let statsAustralia = response.data.covid19Stats;
-        $("#AusStates").change(function(){
-            var stateText = $("#AusStates option:selected").text();
-            //console.log(stateText);
-            let stateIndex = statsAustralia.findIndex( area => area.province === stateText)
-            //console.log(stateIndex);
-            //console.log(data);   
-            let state = $("<p>").text("State: " + JSON.stringify(statsAustralia[stateIndex].province));
-            //console.log(state);
-            let confirmed = $("<p>").text("Confirmed: " + JSON.stringify(statsAustralia[stateIndex].confirmed));
-            let deaths = $("<p>").text("Deaths: " + JSON.stringify(statsAustralia[stateIndex].deaths));
-            let recovered = $("<p>").text("Recovered: " + JSON.stringify(statsAustralia[stateIndex].recovered));
-            let getTime  = $("<p>").text("Last updated: " + JSON.stringify(statsAustralia[stateIndex].lastUpdate));
-            //console.log(getTime);
-            $("#covidDisplay").prepend(state,confirmed,deaths,recovered,getTime);
-        })
+    // // display the data inside the html
+    // function getCovidData(response){
+    //     //console.log(response);
+    //     let statsAustralia = response.data.covid19Stats;
+    //     $("#AusStates").change(function(){
+    //         var stateText = $("#AusStates option:selected").text();
+    //         //console.log(stateText);
+    //         let stateIndex = statsAustralia.findIndex( area => area.province === stateText)
+    //         //console.log(stateIndex);
+    //         //console.log(data);   
+    //         let state = $("<p>").text("State: " + JSON.stringify(statsAustralia[stateIndex].province));
+    //         //console.log(state);
+    //         let confirmed = $("<p>").text("Confirmed: " + JSON.stringify(statsAustralia[stateIndex].confirmed));
+    //         let deaths = $("<p>").text("Deaths: " + JSON.stringify(statsAustralia[stateIndex].deaths));
+    //         let recovered = $("<p>").text("Recovered: " + JSON.stringify(statsAustralia[stateIndex].recovered));
+    //         let getTime  = $("<p>").text("Last updated: " + JSON.stringify(statsAustralia[stateIndex].lastUpdate));
+    //         //console.log(getTime);
+    //         $("#covidDisplay").prepend(state,confirmed,deaths,recovered,getTime);
+    //     })
 
-    };
+    // };
 
         // getting the top news from google news for australia
     getWorldNews()
