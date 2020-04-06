@@ -32,7 +32,7 @@ function pullRecipes () {
             '<div class="text-gray-900 font-bold text-xl mb-2">'+JSON.parse(response).results[i].title+'</div>' +
             '<p class="text-gray-700 text-base">Ingredients: '+JSON.parse(response).results[i].ingredients+'</p>' +
 
-            '<div class="px-6 py-4"><span class="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">'+
+            '<div class=" py-4"><span class="inline-block rounded-full  py-1 text-sm font-semibold text-gray-700 mr-2">'+
             '<a target="blank" class="linkstyle" href="'+JSON.parse(response).results[i].href+'">Cook Me</a></span>'+
             
            '</div>' +
