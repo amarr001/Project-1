@@ -2,7 +2,7 @@ $(document).ready(function () {
     function getAusArticles() {
         $.ajax({
             // URL of the API
-            url: "http://newsapi.org/v2/top-headlines?country=au&category=health&apiKey=0e7b5f109619407cb1b122a24f82e1dc",
+            url: "https://newsapi.org/v2/top-headlines?country=au&category=health&apiKey=0e7b5f109619407cb1b122a24f82e1dc",
             method: "GET",
             success: function (incomingData) {
 
@@ -24,17 +24,17 @@ $(document).ready(function () {
                     newsTitle.attr("id", "title");
                     newsDescription.attr("id", "description");
 
-                    $(`#ausNews${i}`).prepend(newsTitle)
-                    $(`#ausNews${i}`).prepend(newsDescription)
+                    $(`#ausNews${i}`).prepend(newsTitle, newsDescription)
                     
-                    articlelink = $("<a>");
-                    articlelink.attr({
-                        "href" : newsArticles[i].url,
-                        "class": "linkstyle",
-                        "target": "_blank"
-                    })
+                    articlelink = $("<a target='_blank'>");
+                    articlelink.attr("href", newsArticles[i].url)
+                    articlelink.attr({"class": "linkstyle"})
                     articlelink.text("Click here to read the full article")
                     $(`.ausNews${i}`).prepend(articlelink);
+                    
+                    
+                    
+
                 }
             },
             error: function (uvData) {
